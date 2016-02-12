@@ -18,7 +18,6 @@ function calculatePercentage(wordCount) {
     var percentage = (wordCount / wordCountAim) * 100;
     displayPercentage(percentage);
 
-
 }
 
 function displayPercentage(p) {
