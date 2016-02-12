@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAddIn1", "OfficeAddIn1\OfficeAddIn1.csproj", "{58F69E56-2174-485A-8AEE-E08F17939570}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAddIn1Web", "OfficeAddIn1Web\OfficeAddIn1Web.csproj", "{C55F69EE-1E86-4E30-9A27-24C2BE86201E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{469388DE-9654-4B71-81C7-6C3869220B7A}"
+	ProjectSection(SolutionItems) = preProject
+		home.html = home.html
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

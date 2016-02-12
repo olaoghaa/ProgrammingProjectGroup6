@@ -18,16 +18,24 @@
 
     <link href="Home.css" rel="stylesheet" type="text/css" />
     <script src="Home.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="percentage.js" defer></script> 
+
 </head>
+
 <body>
     <div id="content-header">
         <div class="padding">
             <h1>Welcome</h1>
         </div>
     </div>
+
     <div id="content-main">
+
+
         <div class="padding">
             <p><strong>Add home screen content here.</strong></p>
+
             <p>For example:</p>
             <button id="get-data-from-selection">Get data from selection</button>
 
@@ -35,6 +43,22 @@
                 <a target="_blank" href="https://go.microsoft.com/fwlink/?LinkId=276812">Find more samples online...</a>
             </p>
         </div>
+
+        <div id="percentage-testing">
+
+            <br />
+
+            <p id="percentage">   </p>
+
+            <form>
+                How many words are you aiming for? 
+                <input type="text" id="word-aim" /><br />
+                <input type="button" value="Calculate!" onclick="getNumberOfWords();" />
+            </form>
+
+
+        </div>
+       
     </div>
 </body>
 </html>
