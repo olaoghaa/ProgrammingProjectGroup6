@@ -19,48 +19,77 @@
     <link href="Home.css" rel="stylesheet" type="text/css" />
     <script src="Home.js" type="text/javascript"></script>
 
-    <script type="text/javascript" src="percentage.js" defer></script> 
+    <script src="note.js" type="text/javascript"></script>
 
+    <script src="format.js" type="text/javascript"></script>
 </head>
-
 <body>
     <div id="content-header">
         <div class="padding">
             <h1>Welcome</h1>
         </div>
     </div>
-
     <div id="content-main">
+     
+          <div id="percentage-testing">
+
+               <br>
+
+               Highlight all text and click Calculate! to calculate your percentage completion.
+               <br>
+
+               <form>
+                   How many words are you aiming for?
+                   <input type="text" id="word-aim" />
+                   <input type="button" value="Calculate!" onclick="getNumberOfWords();" />
+
+               </form>
+
+               <p id="percentage">   </p>
 
 
-        <div class="padding">
-            <p><strong>Add home screen content here.</strong></p>
+           </div>  
 
-            <p>For example:</p>
-            <button id="get-data-from-selection">Get data from selection</button>
 
-            <p style="margin-top: 50px;">
-                <a target="_blank" href="https://go.microsoft.com/fwlink/?LinkId=276812">Find more samples online...</a>
-            </p>
-        </div>
+        <div id="formatting">
 
-        <div id="percentage-testing">
+            <p style="margin-top: 30px"></p>
+            <p><strong>Auto-Format template.</strong></p>
+            <p style="margin-top: 20px"></p>
 
-            <br>
+            <form name="format">
+                <!--you can change the rows/cols values for a different size textbox-->
+                <textarea name="input" rows="4" cols="20">Introduction&#10;Point 1&#10;Conclusion</textarea>
 
-            Highlight all text and click Calculate! to calculate your percentage completion.
-            <br>
+                <p>you can scroll through the textbox if a larger format is entered</p>
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <p>
+                                <!-- This table shit is just for better formatting of the app, ignore it-->
+                                <input type="button" value="Paste Format" onClick="pasteFormat();">
+                            </p>
+                        </td>
+                    </tr>
+                </table>
 
-            <form>
-                How many words are you aiming for? 
-                <input type="text" id="word-aim" /> 
-                <input type="button" value="Calculate!" onclick="getNumberOfWords();" />
+                <textarea name="outputtext" rows="4">format is pasted&#10;here for testing</textarea>
             </form>
 
-            <p id="percentage">   </p>
-
         </div>
-       
+
+        <script language="javascript" type="text/javascript">
+            function pasteFormat() {
+                var template = document.format.input.value;
+                /*not sure if i want to include this condition or not; it stops pasting an empty 
+                input but that could be used for deleting, maybe deletion should get its own button?*/
+                if (template !== "") {
+                    document.myform.outputtext.value = template;
+                }
+            }
+        </script>
+
+
     </div>
 </body>
 </html>
