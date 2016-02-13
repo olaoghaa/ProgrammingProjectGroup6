@@ -21,6 +21,8 @@
 
     <script type="text/javascript" src="percentage.js" defer></script> 
 
+    <script type="text/javascript" src="EssayStructure.js" defer></script> 
+
 </head>
 <body>
     <div id="content-header">
@@ -58,7 +60,7 @@
 
             <form name="format">
                 <!--you can change the rows/cols values for a different size textbox-->
-                <textarea name="input" rows="4" cols="20">Introduction&#10;Point 1&#10;Conclusion</textarea>
+                <textarea id="Structure" name="input" rows="4" cols="20">Introduction&#10;Point 1&#10;Point 2&#10;Conclusion</textarea>
 
                 <p>you can scroll through the textbox if a larger format is entered</p>
                 <table border="0" cellspacing="0" cellpadding="0">
@@ -66,7 +68,7 @@
                         <td>
                             <p>
                                 <!-- This table shit is just for better formatting of the app, ignore it-->
-                                <input type="button" value="Paste Format" onClick="pasteFormat();">
+                                <input type="button" value="Input Structure" onclick="getStructureInput();" />
                             </p>
                         </td>
                     </tr>
