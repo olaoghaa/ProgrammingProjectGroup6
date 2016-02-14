@@ -20,7 +20,7 @@
     <script src="Home.js" type="text/javascript"></script>
 
     <script type="text/javascript" src="percentage.js" defer></script> 
-
+    <script type="text/javascript" src="commonWords.js" defer></script>
     <script type="text/javascript" src="EssayStructure.js" defer></script> 
 
 </head>
@@ -78,6 +78,28 @@
             </form>
 
         </div>
+
+        <div id="Common Words">
+            <br>
+            Highlight all text you wish to see the most common words for.
+            <br>
+
+            <form>
+                Click the button to see Common Words!!
+                <input type="button" value="Common Words!" onclick="getMostCommonWords();" />
+            </form>
+
+            <p id="common">
+            </p>
+
+            <p id="common1">
+            </p>
+            <p id="common2">
+            </p>
+            <p id="common3">
+            </p>
+        </div>
+
 
         <script language="javascript" type="text/javascript">
             function pasteFormat() {
