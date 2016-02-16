@@ -22,6 +22,22 @@ function calculatePercentage(wordCount) {
 
 function displayPercentage(p) {
 
-    document.getElementById("percentage").innerHTML = p + "%" + " completed!";
+    var displayPerc = document.getElementById("percentage");
+    
+    if ( isNaN(p) || p < 1 ) {
+
+        displayPerc.innerHTML = "Please enter a valid value!";
+        return;
+
+    }
+    
+    if (p >= 100)
+        p = 100;
+
+    if (p.toString().indexOf(".") > -1){
+        p = p.toFixed(2);
+    }
+
+    displayPerc.innerHTML = p + "%" + " completed!";
 
 }
