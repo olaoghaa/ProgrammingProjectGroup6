@@ -22,6 +22,7 @@
     <script type="text/javascript" src="percentage.js" defer></script> 
     <script type="text/javascript" src="EssayStructure.js" defer></script>
     <script type="text/javascript" src="commonWords.js" defer></script>
+    <script type="text/javascript" src="Keywords.js" defer></script>
 
 
 </head>
@@ -75,8 +76,7 @@
                     </tr>
                 </table>
 
-                <textarea name="outputtext" rows="4">format is pasted&#10;here for testing</textarea>
-            </form>
+             </form>
 
         </div>
 
@@ -102,16 +102,23 @@
         </div>
 
 
-        <script language="javascript" type="text/javascript">
-            function pasteFormat() {
-                var template = document.format.input.value;
-                /*not sure if i want to include this condition or not; it stops pasting an empty 
-                input but that could be used for deleting, maybe deletion should get its own button?*/
-                if (template !== "") {
-                    document.myform.outputtext.value = template;
-                }
-            }
-        </script>
+        <div id="Key Words">
+
+            <form>
+                Enter key words or phrases separated by commas
+                <input type="text" id="keywords" />
+                <input type="button" value="Add Keywords" onclick="addKeywords();" />
+
+                <p id="keyword"></p>                
+
+            </form>
+
+            <br> Highlight all text you whish to be checked for key words <br>
+            <input type="button" value="Check for keywords" onclick="calculateKeywords();" />
+            
+            <p id="keywordFreq"> </p>
+        </div>
+
 
 
     </div>
