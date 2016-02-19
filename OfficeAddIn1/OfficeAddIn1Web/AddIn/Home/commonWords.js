@@ -117,3 +117,9 @@ function displayCommmonWords(g, t) {
     
 
 }
+
+function minimizeC() {
+
+    $("#common-box").toggle();
+
+}
