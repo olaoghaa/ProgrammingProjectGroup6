@@ -63,9 +63,3 @@ function displayKeywordFreqs(freqs) {
     document.getElementById("keywordFreq").innerHTML = keywordfreqs;   
 
 }
-
-function minimizeK() {
-
-    $("#key-box").toggle();
-
-}

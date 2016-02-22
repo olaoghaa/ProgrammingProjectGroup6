@@ -67,7 +67,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddIn\Home\commonWords.js" />
+    <Content Include="AddIn\Home\EssayStructure.js" />
+    <Content Include="AddIn\Home\KeyWords.js" />
     <Content Include="AddIn\Home\percentage.js" />
+    <Content Include="AddIn\Home\UI.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

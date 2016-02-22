@@ -19,6 +19,7 @@
     <link href="Home.css" rel="stylesheet" type="text/css" />
     <script src="Home.js" type="text/javascript"></script>
 
+    <script type="text/javascript" src="UI.js" defer></script>
     <script type="text/javascript" src="percentage.js" defer></script>
     <script type="text/javascript" src="EssayStructure.js" defer></script>
     <script type="text/javascript" src="commonWords.js" defer></script>
@@ -32,8 +33,13 @@
         <div class="padding">
             <h1>Welcome</h1>
         </div>
+
     </div>
     <div id="content-main">
+
+        <input type="button" id="hide" value="-" onclick="hideAll()" />
+        <input type="button" id="show" value="+" onclick="openAll()" />
+        <input type="button" id="refresh" value="&" onclick="refreshData()"/> 
 
         <div id="percentage-testing">
 
@@ -42,21 +48,22 @@
             </div>
 
             <div id="percent-box">
-                <br>
+                <div id="percent-content">
+                    <br>
 
-                Highlight all text and click Calculate! to calculate your percentage completion.
-                <br>
+                    Highlight all text and click Calculate! to calculate your percentage completion.
+                    <br>
 
-                <form>
-                    How many words are you aiming for?
-                    <input type="text" id="word-aim" />
-                    <input type="button" value="Calculate!" onclick="getNumberOfWords();" />
+                    <form>
+                        How many words are you aiming for?
+                        <input type="text" id="word-aim" />
+                        <input type="button" value="Calculate!" onclick="getNumberOfWords();" />
 
-                </form>
+                    </form>
 
-                <p id="percentage">   </p>
+                    <p id="percentage">   </p>
+                </div>
             </div>
-
         </div>
 
 
@@ -126,7 +133,7 @@
             </div>
 
             <div id="key-box">
-                
+
                 <table border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td>
@@ -137,9 +144,9 @@
                         </td>
                     </tr>
                 </table>
-                
+
                 <form>
-                    
+
                     <input type="text" id="keywords" />
                     <input type="button" value="Add Keywords" onclick="addKeywords();" />
 

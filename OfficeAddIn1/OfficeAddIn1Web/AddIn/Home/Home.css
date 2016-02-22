@@ -1,18 +1,73 @@
 ﻿/* Page-specific styling */
 
+#content-header{
+   
+
+}
+
+#hide{
+    background: #009ACD;
+     border: solid 1px;
+    width: 9%;
+    height: 3%;
+
+    padding: 0;
+    cursor:pointer;
+
+    position:fixed;
+     left:2%;
+     top:7%;
+     z-index:1000;
+
+}
+
+#show{
+     background: #009ACD; 
+      border: solid 1px;
+    width: 9%;
+    height: 3%;
+
+    padding: 0;
+    cursor:pointer;
+
+    position:fixed;
+     left:14%;
+     top:7%;
+     z-index:1000;
+
+}
+
+#refresh{
+     background: #009ACD; 
+      border: solid 1px;
+    width: 10%;
+    height: 4%;
+
+    padding: 0;
+    cursor:pointer;
+
+    position:fixed;
+     left:66%;
+     top:5%;
+     z-index:1000;
+
+}
+
+
 /* % tool style */
 #percentage-testing{
     width: 100%;
-    border:solid 1px;
+    border: 1px;
 }
 
 #percent_title_bar{
     background: #FEFEFE;
     height: 20px;
     width: 100%;
+    top: 12%;
 }
 #percent_minimize{
-    border:solid 1px;
+    border: solid 1px;
     width: 100%;
     height: 25px;
 
@@ -24,12 +79,17 @@
     width: 100%;
     background: #F0F8FF;
 }
+#percent-content{
+    height: 125px;
+    width: 96%;
+    background: #F0F8FF;
+}
 
 /* formatting tool style */
 
 #formatting{
     width: 100%;
-    border:solid 1px;
+    border: 1px;
 }
 
 #format_title_bar{
@@ -38,7 +98,7 @@
     width: 100%;
 }
 #format_minimize{
-    border:solid 1px;
+    border: solid 1px;
     width: 100%;
     height: 25px;
 
@@ -56,7 +116,7 @@
 
 #Common Words{
     width: 100%;
-    border:solid 1px;
+    border: 1px;
 }
 
 #common_title_bar{
@@ -65,7 +125,7 @@
     width: 100%;
 }
 #common_minimize{
-    border:solid 1px;
+    border: solid 1px;
     width: 100%;
     height: 25px;
 
@@ -83,7 +143,7 @@
 
 #Key Words{
     width: 100%;
-    border:solid 1px;
+    border: 1px;
 }
 
 #key_title_bar{
@@ -92,7 +152,7 @@
     width: 100%;
 }
 #key_minimize{
-    border:solid 1px;
+    border: solid 1px;
     width: 100%;
     height: 25px;
 

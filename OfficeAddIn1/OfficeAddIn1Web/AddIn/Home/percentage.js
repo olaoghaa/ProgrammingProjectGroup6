@@ -41,9 +41,3 @@ function displayPercentage(p) {
     displayPerc.innerHTML = p + "%" + " completed!";
 
 }
-
-function minimizeP() {
-
-    $("#percent-box").toggle();
-
-}

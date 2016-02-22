@@ -4,10 +4,3 @@
     Office.context.document.setSelectedDataAsync(value); 
 
 }
-
-
-function minimizeF() {
-
-    $("#format-box").toggle();
-
-}
