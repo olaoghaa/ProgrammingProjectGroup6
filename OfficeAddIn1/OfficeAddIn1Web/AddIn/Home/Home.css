@@ -1,54 +1,49 @@
 ﻿/* Page-specific styling */
 
-#content-header{
-   
-
-}
-
 #hide{
-    background: #009ACD;
+    background: #1d70bd;
      border: solid 1px;
-    width: 9%;
-    height: 3%;
+    width: 30px;
+    height: 25px;
 
     padding: 0;
     cursor:pointer;
 
     position:fixed;
-     left:2%;
-     top:7%;
+     left:15px;
+     top:50px;
      z-index:1000;
 
 }
 
 #show{
-     background: #009ACD; 
+     background: #1d70bd; 
       border: solid 1px;
-    width: 9%;
-    height: 3%;
+    width: 30px;
+    height: 25px;
 
     padding: 0;
     cursor:pointer;
 
     position:fixed;
-     left:14%;
-     top:7%;
+     left:55px;
+     top:50px;
      z-index:1000;
 
 }
 
 #refresh{
-     background: #009ACD; 
+     background: #1d70bd; 
       border: solid 1px;
-    width: 10%;
-    height: 4%;
+    width: 40px;
+    height: 40px;
 
     padding: 0;
     cursor:pointer;
 
     position:fixed;
-     left:66%;
-     top:5%;
+     left: 235px;
+     top:30px;
      z-index:1000;
 
 }
@@ -61,16 +56,16 @@
 }
 
 #percent_title_bar{
-    background: #FEFEFE;
-    height: 20px;
+    height: 35px;
     width: 100%;
-    top: 12%;
+    
 }
 #percent_minimize{
     border: solid 1px;
     width: 100%;
-    height: 25px;
+    height: 35px;
 
+    background: #1d70bd;
     padding: 0;
     cursor:pointer;
 }
@@ -93,15 +88,16 @@
 }
 
 #format_title_bar{
-    background: #FEFEFE;
-    height: 20px;
+  
+    height: 35px;
     width: 100%;
 }
 #format_minimize{
     border: solid 1px;
     width: 100%;
-    height: 25px;
+    height: 35px;
 
+    background: #1d70bd;
     padding: 0;
     cursor:pointer;
 }
@@ -120,20 +116,21 @@
 }
 
 #common_title_bar{
-    background: #FEFEFE;
-    height: 20px;
+  
+    height: 35px;
     width: 100%;
 }
 #common_minimize{
     border: solid 1px;
     width: 100%;
-    height: 25px;
+    height: 35px;
 
+    background: #1d70bd;
     padding: 0;
     cursor:pointer;
 }
 #common-box{
-    height: 150px;
+    height: 250px;
     width: 100%;
     background: #F0F8FF;
 }
@@ -147,15 +144,16 @@
 }
 
 #key_title_bar{
-    background: #FEFEFE;
-    height: 20px;
+  
+    height: 35px;
     width: 100%;
 }
 #key_minimize{
     border: solid 1px;
     width: 100%;
-    height: 25px;
+    height: 35px;
 
+    background: #1d70bd;
     padding: 0;
     cursor:pointer;
 }

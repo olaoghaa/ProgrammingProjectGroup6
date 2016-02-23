@@ -40,6 +40,6 @@ function openAll() {
 
 function refreshData() {
     getNumberOfWords();
-    //getMostCommonWords();
+    getMostCommonWords();
     calculateKeywords();
 }
