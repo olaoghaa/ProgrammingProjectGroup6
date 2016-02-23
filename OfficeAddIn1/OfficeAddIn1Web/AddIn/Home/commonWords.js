@@ -1,4 +1,11 @@
 // JavaScript source code
+
+
+function wordSize(name, value) {
+    this.name = name;
+    this.value = value;
+}
+
 function getMostCommonWords() {
     Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
         function (result) {
@@ -6,114 +13,92 @@ function getMostCommonWords() {
             var i = 0;
             var wordCount = result.value.split(" ");
             var max = result.value.split(" ").length;
+            var dict = [max];
             var county = new Array(max);
-            var c=0;
-            while (c < max) {
-                county[c] = 0;
-                c++;
-            }
+            var counter = 0;
             while (i < max) {
-                var j = 0;
-                while (j < max) {
-                    if (wordCount[i] == wordCount[j] && i != j) {
-                        if (county[j] == 0) {
-                            county[i] = county[i] + 1;
-                        }
-                        //break;
-                    }
-                    else {
-                        if (county[i] <= 1) {
-                            county[i] = 1;
-                        }
-                    }
-                    j = j + 1;
-                }
-                i = i + 1;
-                //county[1] = 9;
+                dict[i] = { word: "", value: 0 };
+                i++;
             }
-            var t = 0;
-            while (t < max) {
-                var tt = 0;
-                while (tt < max) {
-                    if (wordCount[tt] == wordCount[t] && t != tt) {
-                        if (tt > t) {
-                            county[tt] = 0;
-                        }
-                        else if(t>tt) {
-                            county[t] = 0;
+            var p = 0;
+            while (p < max) {
+                dict[p].word = wordCount[p];
+                dict[p].value = 1;
+                p++;
+            }
+            while (count < max) {
+                var t = 0;
+                while (t < max) {
+                    if (dict[count].word == dict[t].word) {
+                        if (count < t) {
+                            dict[count].value += 1;
                         }
                     }
-                    tt++;
+                    t++;
                 }
-                t++;
+                count++;
             }
-            //var t = county[1];
-            if (county[0] == null) {
-                console.log("Hey");
-            }
-            console.log("count " + county[0]);
-            var result= new Array(4);
-            var otherResult = new Array(4);
-            var a = 0;
-            var b = 0;
-            var x = 0;
-            var temp = 0;
-            while (x < max) {
-                if (county[x]!=0) {
-                    temp++;
-                }
-                x++;
-            }
-            while (a < 4) {
-                result[a] = 0;
-                a++;
-            }
-            while (b < 4) {
-                otherResult[b] = 0;
-                b++;
-            }
-            var jj = 4;
-            var k = 0;
-            if (x < 4) {
-                jj = x;
-            }
-            var hhh = 0;
-            console.log("" + wordCount + " " +county);
-          while (count < county.length) {
-                var kane = 0;
-          
-                var p = 0;
-                while (p < 4) {
-                    if (county[count] > result[p]) {
-                            result[p] = county[count];
-                            otherResult[p] = wordCount[count];
-                            break;
+            var q = 0;
+            while (q < max) {
+                var y = 0;
+                while (y < max) {
+                    if (dict[q].word == dict[y].word && q != y) {
+                        if (y > q) {
+                            dict[y].value = 0;
+                        }
+                        else {
+                            dict[q].value = 0;
+                            }
                     }
-                    p++;
+                    y++;
                 }
-              count++;
-            }
-            while (count < 4) {
-                result[count] = county[count];
-                otherResult[count] = wordCount[count];
-            }
-            displayCommmonWords(result, otherResult);
+                q++;
+        }
+
+
+            bubbleSort(dict);
+            displayCommmonWords(dict, max-1);
         }
     );
 
 }
 
-function displayCommmonWords(g, t) {
-    var i = 0;
-    while (i < g.length) {
+function bubbleSort(arr) {
+    var len = arr.length;
+    for (var i = len - 1; i >= 0; i--) {
+        for (var j = 1; j <= i; j++) {
+            if (arr[j - 1].value > arr[j].value) {
+                var temp = arr[j - 1].value;
+                var tmp = arr[j - 1].word;
+                arr[j - 1].value = arr[j].value;
+                arr[j - 1].word = arr[j].word;
+                arr[j].value = temp;
+                arr[j].word = tmp;
+            }
+        }
+    }
+    return arr;
+}
 
-       document.getElementById("common").innerHTML = t[0] + " is used " + g[0] + " time(s)";
-       document.getElementById("common1").innerHTML = t[1] + " is used " + g[1] + " time(s)";
-       document.getElementById("common2").innerHTML = t[2] + " is used " + g[2] + " time(s)";
-       document.getElementById("common3").innerHTML = t[3] + " is used " + g[3] + " time(s)";
+
+function displayCommmonWords(t, c) {
+    var i = 0;
+    while (i < t.length) {
+
+        document.getElementById("common").innerHTML = t[c].word + " is used " + t[c].value + " time(s)";
+        document.getElementById("common1").innerHTML = t[c-1].word + " is used " + t[c-1].value + " time(s)";
+        document.getElementById("common2").innerHTML = t[c-2].word + " is used " + t[c-2].value + " time(s)";
+        document.getElementById("common3").innerHTML = t[c-3].word + " is used " + t[c-3].value + " time(s)";
+       
 
         i++;
     }
-    
+
+
+}
+
+function minimizeC() {
+
+    $("#common-box").toggle();
 
 }
