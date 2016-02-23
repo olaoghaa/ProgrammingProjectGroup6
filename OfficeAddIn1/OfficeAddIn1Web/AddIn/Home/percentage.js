@@ -24,7 +24,8 @@ function displayPercentage(p) {
 
     var displayPerc = document.getElementById("percentage");
     
-    if ( isNaN(p) || p < 1 ) {
+
+    if (isNaN(p) /* || p < 1 */ ) {
 
         displayPerc.innerHTML = "Please enter a valid value!";
         return;
@@ -35,7 +36,7 @@ function displayPercentage(p) {
         p = 100;
 
     if (p.toString().indexOf(".") > -1){
-        p = p.toFixed(2);
+       p = p.toFixed(2);
     }
 
     displayPerc.innerHTML = p + "%" + " completed!";
