@@ -54,12 +54,39 @@ function calculateKeywords() {
 }
 
 function displayKeywordFreqs(freqs) {
+
     var keywordfreqs = [];
     for (var i = 0; i < keywords.length; i++){
         keywordfreqs.push(keywords[i] + " ");
         keywordfreqs.push(freqs[i] + "\n");
 
     }
-    document.getElementById("keywordFreq").innerHTML = keywordfreqs;   
+
+    var table = document.createElement("TABLE");
+    table.border = "0";
+    var columnCount = keywordfreqs.length;
+    var row = table.insertRow(-1);
+    
+    var headerCell = document.createElement("TH");
+    headerCell.innerHTML = "keywords";
+    row.appendChild(headerCell);
+    headerCell = document.createElement("TH");
+    headerCell.innerHTML = "times used";
+    row.appendChild(headerCell);
+
+    for (var i = 0; i < keywordfreqs.length; i+=2) {
+        row = table.insertRow(-1);
+        var cell = row.insertCell(-1);
+        cell.innerHTML = keywordfreqs[i];
+        cell = row.insertCell(-1);
+        cell.innerHTML = keywordfreqs[i + 1];
+    }
+
+    var keyTable = document.getElementById("keyTable");
+    keyTable.innerHTML = "";
+    keyTable.appendChild(table);
+    
+
+    //document.getElementById("keywordFreq").innerHTML = keywordfreqs;   
 
 }
