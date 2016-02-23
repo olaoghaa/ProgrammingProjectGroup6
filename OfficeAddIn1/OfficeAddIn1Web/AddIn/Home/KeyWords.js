@@ -90,3 +90,9 @@ function displayKeywordFreqs(freqs) {
     //document.getElementById("keywordFreq").innerHTML = keywordfreqs;   
 
 }
+
+function clearKeywords() {
+    keywords = [];
+    displayKeywords();
+    displayKeywordFreqs(keywords);
+}
