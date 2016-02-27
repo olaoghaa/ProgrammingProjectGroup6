@@ -2,23 +2,23 @@
 
 #hide{
     background: #1d70bd;
-     border: solid 1px;
+    
     width: 30px;
     height: 25px;
 
     padding: 0;
 
     position: inherit;
-     left:15px;
-     top:50px;
+    left:15px;
+    top:50px;
      
-     z-index: 1000;
-     overflow: auto;
+    z-index: 1000;
+    overflow: auto;
 }
 
 #show{
-     background: #1d70bd; 
-      border: solid 1px;
+    background: #1d70bd; 
+    
     width: 30px;
     height: 25px;
 
@@ -26,15 +26,15 @@
     cursor:pointer;
 
     position:absolute;
-     left:55px;
-     top:50px;
+    left:55px;
+    top:50px;
     
 
 }
 
 #refresh{
-     background: #1d70bd; 
-      border: solid 1px;
+    background: #1d70bd; 
+    
     width: 40px;
     height: 40px;
 
@@ -42,65 +42,61 @@
     cursor:pointer;
 
     position:fixed;
-     left: 235px;
-     top:30px;
-     z-index:1000;
+    left: 235px;
+    top:30px;
+    z-index:1000;
 
 }
 
 
 /* % tool style */
 #percentage-testing{
-    width: 100%;
-    border: 1px;
+    width: 100%;  
 }
 
-#percent_title_bar{
+#percent_title_bar{   
     height: 35px;
     width: 100%;
+    
     
 }
 #percent_minimize{
-    
+    text-align:left;
     width: 100%;
     height: 35px;
-
+    font-size: 15px;    
+    color: #ffffff;
     background: #1d70bd;
     padding: 0;
     cursor:pointer;
 }
 #percent-box{
-    height: 175px;
-    width: 100%;
-    background: #ffffff;
+    height:175px;
+    width: 100%;    
     overflow:hidden;
 }
-#percent-contentA{
-    height: 175px;
-    
-  
+#percent-contentA{    
     background: #ffffff;
-    
     float:left;
     overflow:hidden;
-    
-    padding-left: 15px;
+    padding-left: 15px;      
 
 }
-#percent-contentB{
-    height: 175px;
-    
+
+
+#percent-contentB{    
     background: #ffffff;
-    
+    font-size: 15px;
     overflow:hidden;
-    float:right;
-    padding-right: 45px;
+    float:right;   
+    padding-right: 65px;
+    padding-top: 30px;
 }
 
 #percent-calculate{
-     position:absolute;
-    transition: .5s ease;
-    top: 155px;
+    top:155px;
+    position:absolute;
+    transition: .5s ease;    
     height: 40px ;
     background: #1d70bd;
     z-index:1000;
@@ -109,7 +105,7 @@
 
 
 }
-#word-aim{
+#word-aim{    
     width: 100px;
 }
 
@@ -127,10 +123,11 @@
     width: 100%;
 }
 #format_minimize{
-    
+    text-align:left;
+    font-size: 15px;
     width: 100%;
     height: 35px;
-
+    color: #ffffff;
     background: #1d70bd;
     padding: 0;
     cursor:pointer;
@@ -138,8 +135,8 @@
 #format-box{
     height: 205px;
     width: 100%;
-    background: #F0F8FF;
-
+    background: #ffffff;
+    
     padding-left: 15px;
     padding-right: 15px;
 
@@ -159,10 +156,11 @@
     width: 100%;
 }
 #common_minimize{
-    border: solid 1px;
+    text-align:left;
+    font-size: 15px;    
     width: 100%;
     height: 35px;
-
+    color: #ffffff;
     background: #1d70bd;
     padding: 0;
     cursor:pointer;
@@ -170,9 +168,8 @@
 #common-box{
     height: 250px;
     width: 100%;
-    background: #F0F8FF;
-
-      padding-left: 15px;
+    background: #ffffff;
+    padding-left: 15px;
     padding-right: 15px;
 
 }
@@ -191,10 +188,12 @@
     width: 100%;
 }
 #key_minimize{
+    text-align:left;
+    font-size: 15px;
     border: solid 1px;
     width: 100%;
     height: 35px;
-
+    color: #ffffff;
     background: #1d70bd;
     padding: 0;
     cursor:pointer;
@@ -202,9 +201,8 @@
 #key-box{
     height: 200px;
     width: 100%;
-    background: #F0F8FF;
-
-      padding-left: 15px;
+    background: #ffffff;
+    padding-left: 15px;
     padding-right: 15px;
 
 }
