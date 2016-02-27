@@ -35,7 +35,7 @@ function displayPercentage(p) {
     var displayPerc = document.getElementById("percentage");
 
     if (isNaN(p)){
-        displayPerc.innerHTML = "Please enter a valid value!";
+        displayPerc.innerHTML = "N/A";
         return;
     }    
  
@@ -46,6 +46,6 @@ function displayPercentage(p) {
        p = p.toFixed(2);
     }
 
-    displayPerc.innerHTML = p + "%" + " completed!";
+    displayPerc.innerHTML = p + "%" ;
 
 }
