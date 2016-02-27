@@ -84,7 +84,7 @@
     float:left;
     overflow:hidden;
     
-      padding-left: 15px;
+      padding-left: 35px;
 
 }
 #percent-contentB{
@@ -94,7 +94,7 @@
     
     overflow:hidden;
     float:right;
-    padding-right: 45px;
+    padding-right: 55px;
 }
 
 #percent-calculate{
@@ -130,11 +130,11 @@
     cursor:pointer;
 }
 #format-box{
-    height: 205px;
+    height: 160px;
     width: 100%;
     background: #F0F8FF;
 
-    padding-left: 15px;
+    padding-left: 45px;
     padding-right: 15px;
 
 }
