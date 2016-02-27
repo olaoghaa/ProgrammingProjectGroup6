@@ -2,7 +2,7 @@
 function getNumberOfWords() {
     Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
         function (result) {
-            
+
             var wordCount = result.value.split(" ").length;
             console.log("Wordcount " + wordCount);
             calculatePercentage(wordCount);
@@ -18,7 +18,7 @@ function calculatePercentage(wordCount) {
 
     if (isNaN(wordCount) || wordCount < 1) {
 
-        displayPerc.innerHTML = "Please enter a valid value!";
+        displayPerc.innerHTML = "N/A";
         return;
 
     }
@@ -34,18 +34,18 @@ function displayPercentage(p) {
 
     var displayPerc = document.getElementById("percentage");
 
-    if (isNaN(p)){
-        displayPerc.innerHTML = "Please enter a valid value!";
+    if (isNaN(p)) {
+        displayPerc.innerHTML = "N/A";
         return;
-    }    
- 
+    }
+
     if (p >= 100)
         p = 100;
 
-    if (p.toString().indexOf(".") > -1){
-       p = p.toFixed(2);
+    if (p.toString().indexOf(".") > -1) {
+        p = p.toFixed(2);
     }
 
-    displayPerc.innerHTML = p + "%" + " completed!";
+    displayPerc.innerHTML = p + "%";
 
 }

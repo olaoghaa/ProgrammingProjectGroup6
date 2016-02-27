@@ -7,13 +7,13 @@
     height: 25px;
 
     padding: 0;
-    cursor:pointer;
 
-    position:fixed;
+    position: inherit;
      left:15px;
      top:50px;
-     z-index:1000;
-
+     
+     z-index: 1000;
+     overflow: auto;
 }
 
 #show{
@@ -25,10 +25,10 @@
     padding: 0;
     cursor:pointer;
 
-    position:fixed;
+    position:absolute;
      left:55px;
      top:50px;
-     z-index:1000;
+    
 
 }
 
@@ -70,15 +70,43 @@
     cursor:pointer;
 }
 #percent-box{
-    height: 125px;
+    height: 175px;
     width: 100%;
     background: #F0F8FF;
+    overflow:hidden;
 }
-#percent-content{
-    height: 125px;
-    width: 96%;
+#percent-contentA{
+    height: 175px;
+    
+  
     background: #F0F8FF;
+    
+    float:left;
+    overflow:hidden;
+    
+      padding-left: 15px;
+
 }
+#percent-contentB{
+    height: 175px;
+    
+    background: #F0F8FF;
+    
+    overflow:hidden;
+    float:right;
+    padding-right: 45px;
+}
+
+#percent-calculate{
+    border: solid 1px;
+     background: #1d70bd;
+     z-index:1000;
+
+}
+#word-aim{
+    width: 100px;
+}
+
 
 /* formatting tool style */
 
@@ -105,6 +133,10 @@
     height: 205px;
     width: 100%;
     background: #F0F8FF;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
 }
 
 
@@ -133,6 +165,10 @@
     height: 250px;
     width: 100%;
     background: #F0F8FF;
+
+      padding-left: 15px;
+    padding-right: 15px;
+
 }
 
 
@@ -161,4 +197,8 @@
     height: 200px;
     width: 100%;
     background: #F0F8FF;
+
+      padding-left: 15px;
+    padding-right: 15px;
+
 }
