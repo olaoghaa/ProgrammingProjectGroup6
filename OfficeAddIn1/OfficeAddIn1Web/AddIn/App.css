@@ -1,8 +1,8 @@
 ﻿/* Common app styling */
 
 #content-header {
-    background: #2a8dd4;
-    color: #fff;
+    background: #FFFFFF;
+    color: #ffffff;
     position: absolute;
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@
 }
 
 #content-main {
-    background: #fff;
+    background: #ffffff;
    /* position: fixed;
     top: 80px; /* Same value as #content-header's height *
     left: 0;

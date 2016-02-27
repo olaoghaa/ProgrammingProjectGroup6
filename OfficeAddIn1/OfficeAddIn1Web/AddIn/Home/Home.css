@@ -61,7 +61,7 @@
     
 }
 #percent_minimize{
-    border: solid 1px;
+    
     width: 100%;
     height: 35px;
 
@@ -72,25 +72,25 @@
 #percent-box{
     height: 175px;
     width: 100%;
-    background: #F0F8FF;
+    background: #ffffff;
     overflow:hidden;
 }
 #percent-contentA{
     height: 175px;
     
   
-    background: #F0F8FF;
+    background: #ffffff;
     
     float:left;
     overflow:hidden;
     
-      padding-left: 15px;
+    padding-left: 15px;
 
 }
 #percent-contentB{
     height: 175px;
     
-    background: #F0F8FF;
+    background: #ffffff;
     
     overflow:hidden;
     float:right;
@@ -98,9 +98,15 @@
 }
 
 #percent-calculate{
-    border: solid 1px;
-     background: #1d70bd;
-     z-index:1000;
+     position:absolute;
+    transition: .5s ease;
+    top: 155px;
+    height: 40px ;
+    background: #1d70bd;
+    z-index:1000;
+    font-size: 20px;
+    color:ghostwhite;
+
 
 }
 #word-aim{
@@ -121,7 +127,7 @@
     width: 100%;
 }
 #format_minimize{
-    border: solid 1px;
+    
     width: 100%;
     height: 35px;
 
