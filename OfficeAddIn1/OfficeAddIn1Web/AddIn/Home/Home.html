@@ -35,17 +35,17 @@
 
 
 </head>
-<body>
+<body >
 
     <div id="content-header">
         <input type="button" id="hide" value="-" onclick="hideAll()" />
         <input type="button" id="show" value="+" onclick="openAll()" />
-        <input type="button" id="refresh" value="&" onclick="refreshData()" />
+        <input type="button" id="refresh" value="" onclick="refreshData()" />
 
     </div>
 
 
-    <div id="content-main">
+    <div  id="content-main">
 
         <div id="percentage-testing">
 
@@ -59,11 +59,10 @@
 
                     <form>
 
-                        <p style="font-size:60px" id="percentage"> 0%  </p>
+                        <p style="font-size:55px" id="percentage"> 0%  </p>
 
-                        <input type="button" id="percent-calculate" value="Calculate" onclick="getNumberOfWords();">
-
-
+                        <input type="button"  id="percent-calculate" value="Calculate" onclick="getNumberOfWords();">
+                        
                     </form>
 
 
@@ -96,7 +95,7 @@
                             <td>
                                 <p>
                                     <!--you can change the rows/cols values for a different size textbox-->
-                                    <textarea id="Structure" name="input" rows="4" cols="20">Introduction&#10;Point 1&#10;Point 2&#10;Conclusion</textarea>
+                                    <textarea id="Structure" name="input" rows="5" cols="25">Introduction&#10;Point 1&#10;Point 2&#10;Conclusion</textarea>
                                 </p>
                             </td>
                         </tr>
@@ -109,7 +108,7 @@
                             <td>
                                 <p>
                                     <!-- This table shit is just for better formatting of the app, ignore it-->
-                                    <input type="button" value="Input Structure" onclick="getStructureInput();" />
+                                    <input type="button" id="format-button" value="Input Structure" onclick="getStructureInput();" />
                                 </p>
                             </td>
                         </tr>
