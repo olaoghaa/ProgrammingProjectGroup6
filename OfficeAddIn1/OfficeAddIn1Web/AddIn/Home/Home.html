@@ -29,9 +29,11 @@
     <script type="text/javascript" src="EssayStructure.js" defer></script>
     <script type="text/javascript" src="commonWords.js" defer></script>
     <script type="text/javascript" src="Keywords.js" defer></script>
-    <script id="words" type="dictionary">
+  
+      <script id="words" type="dictionary">
         the,be,to,of,and,a,in,that,have,i,,it,was,for,not,on,with,he,as,you,do,at,this,but,his,by,from,they,we,say,her,she,or,an,will,my,one,all,would,there,their,what,so,up,out,if,about,who,get,which,go,me,when,make,can,like,time,no,just,him,know,take,people,into,year,your,good,some,could,them,see,other,than,then,now,look,only,come,its,over,think,also,back,after,use,two,how,our,work,first,well,way,even,new,want,because,any,these,give,day,most,us
     </script>
+    
     <script src="../../Scripts/jquery-1.9.1.js"></script>
 
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
@@ -67,10 +69,6 @@
 
                         <input type="button"  id="percent-calculate" value="Calculate" onclick="getNumberOfWords();">
 
-                                     </button>
-                                </td>
-                            </tr>
-                        </table>
                     </form>
 
 
@@ -133,24 +131,22 @@
             </div>
 
             <div id="common-box">
-                <br>
-                Highlight all text you wish to see the most common words for.
-                <br>
+                <div id="common-button-div">
+                    <input type="button" id="common-button" value="List Most Common Words" onclick="getMostCommonWords();" />
+                </div>
+                
+                <div id="common-list">
+                    <p id="common">
+                    </p>
 
-                <form>
-                    Click the button to see Common Words!!
-                    <input type="button" value="Common Words!" onclick="getMostCommonWords();" />
-                </form>
+                    <p id="common1">
+                    </p>
+                    <p id="common2">
+                    </p>
+                    <p id="common3">
+                    </p>
 
-                <p id="common">
-                </p>
-
-                <p id="common1">
-                </p>
-                <p id="common2">
-                </p>
-                <p id="common3">
-                </p>
+                </div>
             </div>
         </div>
 
