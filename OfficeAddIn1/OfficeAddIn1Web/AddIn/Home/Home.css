@@ -209,12 +209,35 @@
   
 }
 #common-box{
-    height: 250px;
+    height: 200px;
     width: 100%;
     background: #ffffff;
-    padding-left: 15px;
+    padding-left: 35px;
     padding-right: 15px;
+    padding-top: 10px;
+}
+#common-button-div{
+    height: 40px;
+}
+#common-button{
+    position:absolute;
+    transition: .5s ease;    
+    height: 30px ;
+    background:#0051b4;
+    z-index:1000;
+    font-size: 15px;
+    color:ghostwhite;
+    left: 35px;
+    width: 200px;
 
+   -moz-box-shadow:    inset 0 0 3px #000000;
+   -webkit-box-shadow: inset 0 0 3px #000000;
+   box-shadow:         inset 0 0 3px #000000;
+
+
+}
+#common-list{
+    
 }
 
 #common_button{
@@ -257,7 +280,7 @@
    
 }
 #key-box{
-    height: 200px;
+    height: 250px;
     width: 100%;
     background: #ffffff;
     padding-left: 15px;
