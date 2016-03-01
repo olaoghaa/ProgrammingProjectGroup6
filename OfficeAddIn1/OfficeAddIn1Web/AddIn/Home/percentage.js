@@ -24,7 +24,7 @@ function calculatePercentage(wordCount) {
     }
 
     var wordCountAim = document.getElementById("word-aim").value;
-    var percentage = (wordCount / wordCountAim) * 100;
+    var percentage = Math.round((wordCount / wordCountAim) * 100);
 
     displayPercentage(percentage);
 
