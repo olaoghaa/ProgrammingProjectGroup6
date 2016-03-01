@@ -1,30 +1,27 @@
 ﻿/* header */
 
 #hide{
-    background: #0051b4;
+    background-image: url('../../Images/up.png');
     
-    width: 30px;
+    width: 26px;
     height: 25px;
 
     padding: 0;
 
     position: inherit;
     left:15px;
-    top:35px;
+    top:32px;
      
     z-index: 1000;
     overflow: auto;
 
-    border: solid 1px;
-   -moz-box-shadow:    inset 0 0 5px #000000;
-   -webkit-box-shadow: inset 0 0 5px #000000;
-   box-shadow:         inset 0 0 5px #000000;
+   
 }
 
 #show{
-    background: #0051b4; 
     
-    width: 30px;
+    background-image: url('../../Images/down.png');
+    width: 25px;
     height: 25px;
 
     padding: 0;
@@ -32,37 +29,23 @@
 
     position:absolute;
     left:55px;
-    top:35px;
+    top:32px;
     
-    border: solid 1px;
-   -moz-box-shadow:    inset 0 0 5px #000000;
-   -webkit-box-shadow: inset 0 0 5px #000000;
-   box-shadow:         inset 0 0 5px #000000;
+    
 }
 
 #refresh{
-    background-image: url('../../Images/Refresh - placeholder.png');
+    background-image: url('../../Images/refresh.png');
     
-    width: 40px;
-    height: 40px;
-
-    padding: 0;
+    width: 50px;
+    height: 60px;    
     cursor:pointer;
-
     position:absolute;
     left: 235px;
-    top:10px;
-    z-index:1000;
+    top:9px;
+   
 
-    border: solid 1px;
 
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
-
-  -moz-box-shadow:    inset 0 0 5px #000000;
-   -webkit-box-shadow: inset 0 0 5px #000000;
-   box-shadow:         inset 0 0 5px #000000;
 
 }
 
