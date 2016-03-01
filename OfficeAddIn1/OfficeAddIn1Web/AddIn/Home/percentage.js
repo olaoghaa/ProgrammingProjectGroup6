@@ -1,14 +1,14 @@
 ﻿
 function getNumberOfWords() {
-    Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
-        function (result) {
-            
-            var wordCount = result.value.split(" ").length;
-            console.log("Wordcount " + wordCount);
+    Word.run(function (context) {
+        var doc = context.document;
+        context.load(doc, 'body/text');
+        context.sync().then(function () {
+            var currentText = (doc.body.text || '').trim(),
+            wordCount = currentText.split(/[\s,]+/).length;
             calculatePercentage(wordCount);
-
-        }
-    );
+        });
+    });
 
 }
 
