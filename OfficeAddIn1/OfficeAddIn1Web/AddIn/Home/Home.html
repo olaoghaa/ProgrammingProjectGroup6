@@ -130,8 +130,8 @@
                 <br>
 
                 <form>
-                    Click the button to see Common Words!!
-                    <input type="button" value="Common Words!" onclick="getMostCommonWords();" />
+                    
+                    <input type="button" id ="common_button" value="Find Common Words" onclick="getMostCommonWords();" />
                 </form>
 
                 <p id="common">
@@ -168,18 +168,18 @@
 
                 <form>
 
-                    <input type="text" id="keywords" />
-                    <input type="button" value="Add Keywords" onclick="addKeywords();" />
+                    <input type="text" id="keywords" placeholder="enter keywords here"/>
+                    <input type="button" id="add_key" value="Add Keywords" onclick="addKeywords();" />
 
                     <p id="keyword"></p>
 
                 </form>
 
-                <br> Highlight all text you whish to be checked for key words <br>
-                <input type="button" value="Check for keywords" onclick="calculateKeywords();" />
+                
+                <input type="button" id="check_key" value="Check for keywords" onclick="calculateKeywords();" />
                 <hr />
                 <div id="keyTable"> </div>
-                <input type="button" value="CLear keywords" onclick="clearKeywords();" />
+                <input type="button" id="clr_key" value="Clear keywords" onclick="clearKeywords();" />
             </div>
         </div>
 
