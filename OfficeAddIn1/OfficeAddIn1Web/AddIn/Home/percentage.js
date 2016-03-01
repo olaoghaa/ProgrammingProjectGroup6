@@ -1,14 +1,14 @@
 ﻿
 function getNumberOfWords() {
-    Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
-        function (result) {
-
-            var wordCount = result.value.split(" ").length;
-            console.log("Wordcount " + wordCount);
+    Word.run(function (context) {
+        var doc = context.document;
+        context.load(doc, 'body/text');
+        context.sync().then(function () {
+            var currentText = (doc.body.text || '').trim(),
+            wordCount = currentText.split(/[\s,]+/).length;
             calculatePercentage(wordCount);
-
-        }
-    );
+        });
+    });
 
 }
 
@@ -34,18 +34,18 @@ function displayPercentage(p) {
 
     var displayPerc = document.getElementById("percentage");
 
-    if (isNaN(p)) {
+    if (isNaN(p)){
         displayPerc.innerHTML = "N/A";
         return;
-    }
-
+    }    
+ 
     if (p >= 100)
         p = 100;
 
-    if (p.toString().indexOf(".") > -1) {
-        p = p.toFixed(2);
+    if (p.toString().indexOf(".") > -1){
+       p = p.toFixed(2);
     }
 
-    displayPerc.innerHTML = p + "%";
+    displayPerc.innerHTML = p + "%" ;
 
 }

@@ -29,7 +29,10 @@
     <script type="text/javascript" src="EssayStructure.js" defer></script>
     <script type="text/javascript" src="commonWords.js" defer></script>
     <script type="text/javascript" src="Keywords.js" defer></script>
-
+    <script id="words" type="dictionary">
+                the,be,to,of,the,and,a,in,that,have,i,   ,it,was,for,not,on,with,he,as,you,do,at,this,but,his,by,from,they,we,say,her,she,or,an,will,my,one,all,would,there,their,what,so,up,out,if,about,who,get,which,go,me,when,make,can,like,time,no,just,him,know,take,people,into,year,your,good,some,could,them,see,other,than,then,now,look,only,come,its,over,think,also,back,after,use,two,how,our,work,first,well,way,even,new,want,because,any,these,give,day,most,us
+        
+    </script>
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
 
@@ -38,8 +41,8 @@
 <body >
 
     <div id="content-header">
-        <input type="button" id="hide" value="-" onclick="hideAll()" />
-        <input type="button" id="show" value="+" onclick="openAll()" />
+        <input type="button" id="hide" value="" onclick="hideAll()" />
+        <input type="button" id="show" value="" onclick="openAll()" />
         <input type="button" id="refresh" value="" onclick="refreshData()" />
 
     </div>
@@ -125,13 +128,9 @@
             </div>
 
             <div id="common-box">
-                <br>
-                Highlight all text you wish to see the most common words for.
-                <br>
-
                 <form>
                     
-                    <input type="button" id ="common_button" value="Find Common Words" onclick="getMostCommonWords();" />
+                    <input type="button" id ="common-button" value="Find Common Words" onclick="getMostCommonWords();" />
                 </form>
 
                 <p id="common">

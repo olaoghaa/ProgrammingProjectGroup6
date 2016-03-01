@@ -34,24 +34,42 @@ function calculateKeywords() {
     for (var i = 0; i < keywords.length; i++) {
         numKeywords.push(0);
     }
-    Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
-           function (result) {
-               if (result.status === Office.AsyncResultStatus.Succeeded) {
-                   var text = result.value.toString();               
+    console.log("yas");    
+           Word.run(function (context) {               
+               var thistext = context.document.body;
+               context.load(thistext);
+               return context.sync().then(function () {                
+                   var text = thistext.text;                   
                    for (var i = 0; i < keywords.length; i++) {
                        var re = new RegExp(keywords[i].toString(), 'gi');                       
-                       var num = text.match(re);                       
+                       var num = text.match(re);                      
                        if (num != null) {
                            numKeywords[i] = num.length;                           
                        }
                    }
-                   displayKeywordFreqs(numKeywords);                   
-               } else {
-                   app.showNotification('Error:', result.error.message);
-               }
-           }
-       );    
+               });
+                                      
+              
+           });
+           displayKeywordFreqs(numKeywords);
 }
+function calc() {
+    Word.run(function (context) {
+        var searchResults = context.document.body.search('apple', options);      
+        context.load(searchResults);        
+        return context.sync().then(function () {
+            console.log('Found count: ' + searchResults.items.length);
+
+        });
+    })
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+})
+}
+
 
 function displayKeywordFreqs(freqs) {
 
