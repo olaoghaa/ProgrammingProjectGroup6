@@ -72,6 +72,7 @@
     <Content Include="AddIn\Home\KeyWords.js" />
     <Content Include="AddIn\Home\percentage.js" />
     <Content Include="AddIn\Home\UI.js" />
+    <Content Include="Images\Refresh - placeholder.png" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

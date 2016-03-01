@@ -5,7 +5,7 @@
   <Version>1.0.0.0</Version>
   <ProviderName>[Provider name]</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="OfficeAddIn1" />
+  <DisplayName DefaultValue="Easy Essay" />
   <Description DefaultValue="OfficeAddIn1"/>
   <Hosts>
     <Host Name="Document" />
