@@ -92,9 +92,9 @@
     font-size: 15px;
     overflow:hidden;
        
-    padding-right: 85px;
+    padding-right: 60px;
     padding-top: 30px;
-    left: 160px;
+    left: 180px;
     position: absolute;
 }
 
@@ -206,7 +206,7 @@
     position:absolute;
     transition: .5s ease;    
     height: 30px ;
-    background:#0051b4;
+    background:#2a579a;
     z-index:1000;
     font-size: 15px;
     color:ghostwhite;
