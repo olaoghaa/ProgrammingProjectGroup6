@@ -16,7 +16,7 @@ function getMostCommonWords() {
             var count = 0;
             var i = 0;
             var xx = result;
-            var separators = [' ', '\\\ ', '-', '\\\(', '\\\)', '\\. ', '/', "\r\n", '\\\?'];
+            var separators = [' ', '-', '\\\(', '\\\)', '\\\. ', '/', "\r\n", '\\\?'];
             console.log(separators.join('|'));
             var wordCount = result.value.split(new RegExp(separators.join('|'), 'g'));
             console.log(wordCount)
