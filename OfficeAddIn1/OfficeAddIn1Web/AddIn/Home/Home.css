@@ -219,8 +219,11 @@
 
 
 }
-#common-list{
-    
+#common-table{
+   font-family: Verdana, Arial, sans-serif;
+   font-size: 11px;
+   border-width: 1px;
+   height: 90px;
 }
 
 #common_button{

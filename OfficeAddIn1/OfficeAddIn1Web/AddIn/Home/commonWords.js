@@ -16,7 +16,7 @@ function getMostCommonWords() {
             var count = 0;
             var i = 0;
             var xx = result;
-            var separators = [' ', '-', '\\\(', '\\\)', '\\\. ', '/', "\r\n", '\\\?'];
+            var separators = [' ', '\\\ ', '-', '\\\(', '\\\)', '\\. ', '/', "\r\n", '\\\?'];
             console.log(separators.join('|'));
             var wordCount = result.value.split(new RegExp(separators.join('|'), 'g'));
             console.log(wordCount)
@@ -124,22 +124,28 @@ function selectionSort(arr) {
 function displayCommmonWords(t, c) {
     var i = 0;
     if (c >= 0 && t[c].value != "") {
-        document.getElementById("common").innerHTML = t[c].word + " is used " + t[c].value + " time(s)";
+        document.getElementById("common").innerHTML = t[c].word;
+        document.getElementById("count").innerHTML = t[c].value;
     }
-       if (c - 1 >= 0 && t[c - 1].value != "") {
-                document.getElementById("common1").innerHTML = t[c - 1].word + " is used " + t[c - 1].value + " time(s)";
-            }
-        if (c - 2 >= 0 && t[c - 2].value != "") {
-                document.getElementById("common2").innerHTML = t[c - 2].word + " is used " + t[c - 2].value + " time(s)";
-            }
-        if (c - 3 >= 0 && t[c - 3].value != "") {
-                document.getElementById("common3").innerHTML = t[c - 3].word + " is used " + t[c - 3].value + " time(s)";
-            }
+    if (c - 1 >= 0 && t[c - 1].value != "") {
+        document.getElementById("common1").innerHTML = t[c-1].word;
+        document.getElementById("count1").innerHTML = t[c-1].value;
+        //  document.getElementById("common1").innerHTML = t[c - 1].word + " is used " + t[c - 1].value + " time(s)";
+    }
+    if (c - 2 >= 0 && t[c - 2].value != "") {
+        document.getElementById("common2").innerHTML = t[c-2].word;
+    document.getElementById("count2").innerHTML = t[c-2].value;
+    //     document.getElementById("common2").innerHTML = t[c - 2].word + " is used " + t[c - 2].value + " time(s)";
+}
+if (c - 3 >= 0 && t[c - 3].value != "") {
+    document.getElementById("common3").innerHTML = t[c-3].word;
+    document.getElementById("count3").innerHTML = t[c-3].value;
+    //document.getElementById("common3").innerHTML = t[c - 3].word + " is used " + t[c - 3].value + " time(s)";
+}
 
 }
 
 function minimizeC() {
 
     $("#common-box").toggle();
-
 }
