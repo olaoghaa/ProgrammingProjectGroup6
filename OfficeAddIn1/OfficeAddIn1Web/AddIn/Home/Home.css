@@ -219,8 +219,13 @@
 
 
 }
-#common-list{
-    
+common-table{
+    padding-top: 60px;
+}
+
+table{
+    text-align: left;
+    width: 250px;
 }
 
 #common_button{

@@ -86,10 +86,10 @@ function displayKeywordFreqs(freqs) {
     var row = table.insertRow(-1);
     
     var headerCell = document.createElement("TH");
-    headerCell.innerHTML = "keywords";
+    headerCell.innerHTML = "Keywords";
     row.appendChild(headerCell);
     headerCell = document.createElement("TH");
-    headerCell.innerHTML = "times used";
+    headerCell.innerHTML = "Times Used";
     row.appendChild(headerCell);
 
     for (var i = 0; i < keywordfreqs.length; i+=2) {
