@@ -16,10 +16,10 @@ function getMostCommonWords() {
             var count = 0;
             var i = 0;
             var xx = result;
-            var separators = [' ', '\\\ ', '-', '\\\(', '\\\)', '\\. ', '/', "\r\n", '\\\?'];
-            console.log(separators.join('|'));
+            var separators = [' ', '-', '\\\(', '\\\)', '\\\. ', '/', "\n", '\\\?'];
+            //console.log(separators.join('|'));
             var wordCount = result.value.split(new RegExp(separators.join('|'), 'g'));
-            console.log(wordCount)
+            //console.log(wordCount)
             //var wordCount = result.value.split(" ");
             // var max = result.value.split(" ").length;
             var max = wordCount.length;
@@ -32,6 +32,7 @@ function getMostCommonWords() {
             }
             var p = 0;
             while (p < max) {
+               // console.log(wordCount[p]);
                 dict[p].word = wordCount[p].toLowerCase();
                 dict[p].value = 1;
                 p++;
@@ -123,29 +124,55 @@ function selectionSort(arr) {
 
 function displayCommmonWords(t, c) {
     var i = 0;
-    if (c >= 0 && t[c].value != "") {
-        document.getElementById("common").innerHTML = t[c].word;
-        document.getElementById("count").innerHTML = t[c].value;
+   /* var spin16 = fabric.Spinner(jQuery("#spinner-16point")[0], "sixteen");
+    spin16.start();*/
+    if (c >= 0 && t[c].word != "") {
+        //console.log("first"+t[c].word+t[c].value);
+        document.getElementById("common").innerHTML = t[c].word + " is used " + t[c].value + " time(s)";
     }
-    if (c - 1 >= 0 && t[c - 1].value != "") {
-        document.getElementById("common1").innerHTML = t[c-1].word;
-        document.getElementById("count1").innerHTML = t[c-1].value;
-        //  document.getElementById("common1").innerHTML = t[c - 1].word + " is used " + t[c - 1].value + " time(s)";
-    }
-    if (c - 2 >= 0 && t[c - 2].value != "") {
-        document.getElementById("common2").innerHTML = t[c-2].word;
-    document.getElementById("count2").innerHTML = t[c-2].value;
-    //     document.getElementById("common2").innerHTML = t[c - 2].word + " is used " + t[c - 2].value + " time(s)";
-}
-if (c - 3 >= 0 && t[c - 3].value != "") {
-    document.getElementById("common3").innerHTML = t[c-3].word;
-    document.getElementById("count3").innerHTML = t[c-3].value;
-    //document.getElementById("common3").innerHTML = t[c - 3].word + " is used " + t[c - 3].value + " time(s)";
-}
+   // document.getElementById("common").innerHTML = "Regular president";
+    if (c - 1 >= 0 && t[c - 1].word != "") {
+        //console.log("second" + t[c-1].word);
+                document.getElementById("common1").innerHTML = t[c - 1].word + " is used " + t[c - 1].value + " time(s)";
+            }
+    if (c - 2 >= 0 && t[c - 2].word != "") {
+        //console.log("third" + t[c-2].word);
+                document.getElementById("common2").innerHTML = t[c - 2].word + " is used " + t[c - 2].value + " time(s)";
+            }
+    if (c - 3 >= 0 && t[c - 3].word != "") {
+        //console.log("fourth" + t[c-3].word);
+            var x = c-4;
+            while (x >= 0) {
+                if (t[c - 3].value == t[x].value) {
+                    i += 1;
+                    x--;
+                }
+                else {
+                    break;
+                }
+                
+            }
+            if (i == 0) {
+                document.getElementById("common3").innerHTML = t[c - 3].word + " is used " + t[c - 3].value + " time(s)";
+            }
+            else {
+                document.getElementById("common3").innerHTML = t[c - 3].word + " is used " + t[c - 3].value + " time(s)";
+                document.getElementById("explaination").innerHTML = "There are " + i + " word(s) with this frequency";
+              //  console.log("ffff " + t[c - 5].word);
+
+
+            }
+            if (c >= 0 && t[c].word != "") {
+                //console.log("first" + t[c].word + t[c].value);
+                document.getElementById("common4").innerHTML = t[c].word + " is used " + t[c].value + " time(s)";
+            }
+            //spin16.stop();
+            }
 
 }
 
 function minimizeC() {
 
     $("#common-box").toggle();
+
 }
