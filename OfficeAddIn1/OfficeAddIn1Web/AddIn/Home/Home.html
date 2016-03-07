@@ -1,100 +1,83 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <title></title>
-    <script src="../../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
 
+    <script src="../../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
     <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-
-
-
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
-
     <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
     <!-- <script src="../../Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>  -->
     <!-- <script src="../../Scripts/Office/1/office.js" type="text/javascript"></script>  -->
-
     <link href="../App.css" rel="stylesheet" type="text/css" />
     <script src="../App.js" type="text/javascript"></script>
-
     <link href="Home.css" rel="stylesheet" type="text/css" />
     <script src="Home.js" type="text/javascript"></script>
-
     <script type="text/javascript" src="UI.js" defer></script>
     <script type="text/javascript" src="percentage.js" defer></script>
     <script type="text/javascript" src="EssayStructure.js" defer></script>
     <script type="text/javascript" src="commonWords.js" defer></script>
     <script type="text/javascript" src="Keywords.js" defer></script>
-
     <script id="words" type="dictionary">
-                the,be,to,of,the,and,a,in,that,have,i,had,mr,mrs,ms,are,from,,it,was,is,for,not,on,with,he,as,you,do,at,this,his,by,they,we,say,her,she,or,an,will,my,one,all,there,their,what,up,out,if,who,get,which,go,me,can,no,him,know,take,into,your,them,see,other,than,now,come,its,also,back,use,two,how,our,way,even,new,want,any,these,day,us
-        
+        the,be,to,of,the,and,a,in,that,have,i,had,mr,mrs,ms,are,from,,it,was,is,for,not,on,with,he,as,you,do,at,this,his,by,they,we,say,her,she,or,an,will,my,one,all,there,their,what,up,out,if,who,get,which,go,me,can,no,him,know,take,into,your,them,see,other,than,now,come,its,also,back,use,two,how,our,way,even,new,want,any,these,day,us
+
     </script>
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
 
-
 </head>
-<body >
+
+<body>
 
     <div id="content-header">
         <input type="button" id="hide" value="" onclick="hideAll()" />
         <input type="button" id="show" value="" onclick="openAll()" />
         <input type="button" id="refresh" value="" onclick="refreshData()" />
-
     </div>
 
-
-    <div  id="content-main">
+    <div id="content-main">
 
         <div id="percentage-testing">
 
             <div id="percent_title_bar">
-
                 <input type="button" id="percent_minimize" value="Percentage Completion" onclick="minimizeP();">
             </div>
 
             <div id="percent-box">
                 <div id="percent-contentA">
-
                     <form>
-
                         <p style="font-size:55px" id="percentage"> 0%  </p>
+                        <input type="button" id="percent-calculate" value="Calculate" onclick="getNumberOfWords();">
 
-                        <input type="button"  id="percent-calculate" value="Calculate" onclick="getNumberOfWords();">
-                        
                     </form>
-
-
                 </div>
 
                 <div id="percent-contentB">
-
                     <p> of </p>
                     <input type="text" id="word-aim" placeholder="Words Needed" />
                     <p> complete </p>
                 </div>
 
             </div>
-        </div>
 
+        </div>
 
         <div id="formatting">
 
             <div id="format_title_bar">
+
                 <input type="button" id="format_minimize" value="Auto-Formatting Tool" onclick="minimizeF();">
+
             </div>
 
             <div id="format-box">
-
                 <form name="format">
                     <table border="0" cellspacing="0" cellpadding="0">
-
-
                         <tr>
                             <td>
                                 <p>
@@ -103,11 +86,6 @@
                                 </p>
                             </td>
                         </tr>
-
-
-
-
-
                         <tr>
                             <td>
                                 <p>
@@ -117,9 +95,10 @@
                             </td>
                         </tr>
                     </table>
-
                 </form>
+
             </div>
+
         </div>
 
         <div id="Common Words">
@@ -130,14 +109,13 @@
 
             <div id="common-box">
                 <form>
-                    
-                    <input type="button" id ="common-button" value="Find Common Words" onclick="getMostCommonWords();" />
-                </form>
 
+                    <input type="button" id="common-button" value="Find Common Words" onclick="getMostCommonWords();" />
+                </form>
                 <p id="common">
                 </p>
                 <p id="common4">
-                </p>              
+                </p>
                 <p id="common1">
                 </p>
                 <p id="common2">
@@ -146,9 +124,10 @@
                 </p>
                 <p id="explaination">
                 </p>
-            </div>
-        </div>
 
+            </div>
+
+        </div>
 
         <div id="Key Words">
 
@@ -170,22 +149,19 @@
                 </table>
 
                 <form>
-
-                    <input type="text" id="keywords" placeholder="enter keywords here"/>
+                    <input type="text" id="keywords" placeholder="enter keywords here" />
                     <input type="button" id="add_key" value="Add Keywords" onclick="addKeywords();" />
-
                     <p id="keyword"></p>
-
                 </form>
 
-                
                 <input type="button" id="check_key" value="Check for keywords" onclick="calculateKeywords();" />
                 <hr />
                 <div id="keyTable"> </div>
                 <input type="button" id="clr_key" value="Clear keywords" onclick="clearKeywords();" />
-            </div>
-        </div>
 
+            </div>
+
+        </div>
 
     </div>
 </body>
