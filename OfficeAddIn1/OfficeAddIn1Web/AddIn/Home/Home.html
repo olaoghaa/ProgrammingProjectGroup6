@@ -25,12 +25,12 @@
     <script type="text/javascript" src="Keywords.js" defer></script>
     <script id="words" type="dictionary">
         the,be,to,of,the,and,a,in,that,have,i,had,mr,mrs,ms,are,from,,it,was,is,for,not,on,with,he,as,you,do,at,this,his,by,they,we,say,her,she,or,an,will,my,one,all,there,their,what,up,out,if,who,get,which,go,me,can,no,him,know,take,into,your,them,see,other,than,now,come,its,also,back,use,two,how,our,way,even,new,want,any,these,day,us
-
+        
     </script>
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-       
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -49,13 +49,31 @@
                 <input type="button" id="percent_minimize" value="Percentage Completion" onclick="minimizeP();">
             </div>
 
+          
+
             <div id="percent-box">
+
+                            <div class="container-fluid" style="padding-left: 0px !important; padding-right: 0px !important;">
+
+                                <div class="progress">
+
+                                    <div id="progress" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
+                                         aria-valuemin="0" aria-valuemax="100" style="width:0%;">
+
+
+
+
+                                    </div>
+
+                                </div>
+
+
                 <div id="percent-contentA">
-                    
+
                         <p style="font-size:55px" id="percentage"> 0%  </p>
                         <input type="button" id="percent-calculate" value="Calculate" onclick="getNumberOfWords();">
 
-                    
+                        
                 </div>
 
                 <div id="percent-contentB">
@@ -109,24 +127,43 @@
             </div>
 
             <div id="common-box">
-                <form>
+                            <div id="common-button-div">
+                    
+                                <input type="button" id="common-button" value="Find Common Words" onclick="getMostCommonWords();" />
+                            </div>
 
-                    <input type="button" id="common-button" value="Find Common Words" onclick="getMostCommonWords();" />
-                </form>
-                <p id="common">
-                </p>
-                <p id="common4">
-                </p>
-                <p id="common1">
-                </p>
-                <p id="common2">
-                </p>
-                <p id="common3">
-                </p>
-                <p id="explaination">
-                </p>
 
-            </div>
+                            <div id="common-table-div">
+                                <table id="common-table">
+
+                                    <tr>
+                                        <th>Word</th>
+                                        <th>Times Used</th>
+                                    </tr>
+                                    <tr>
+                                        <td><p id="common"></p></td>
+                                        <td><p id="count"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p id="common1"></p></td>
+                                        <td><p id="count1"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p id="common2"></p></td>
+                                        <td><p id="count2"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p id="common3"></p></td>
+                                        <td><p id="count3"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p id="explanation"></p></td>
+                                    </tr>
+                                </table>
+
+
+                            </div>
+        </div>
 
         </div>
 
@@ -138,19 +175,9 @@
 
             <div id="key-box">
 
-                <table border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td>
-                            <p>
-                                <!-- This table shit is just for better formatting of the app, ignore it-->
-                                Enter key words or phrases separated by commas
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-
                 <form>
-                    <input type="text" id="keywords" placeholder="enter keywords here" />
+
+                                <input type="text" id="keywords" placeholder="enter keywords here" />
                     <input type="button" id="add_key" value="Add Keywords" onclick="addKeywords();" />
                     <p id="keyword"></p>
                 </form>
@@ -160,7 +187,7 @@
                 <div id="keyTable"> </div>
                 <input type="button" id="clr_key" value="Clear keywords" onclick="clearKeywords();" />
 
-            </div>
+        </div>
 
         </div>
 

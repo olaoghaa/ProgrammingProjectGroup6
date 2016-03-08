@@ -78,7 +78,7 @@ function getMostCommonWords() {
                    count--;
             }
             selectionSort(dict);
-            displayCommmonWords(dict, max-1);
+            displayCommmonWords(dict, max - 1);
         }
     );
 
@@ -124,20 +124,19 @@ function selectionSort(arr) {
 
 function displayCommmonWords(t, c) {
     var i = 0;
-   /* var spin16 = fabric.Spinner(jQuery("#spinner-16point")[0], "sixteen");
-    spin16.start();*/
-    if (c >= 0 && t[c].word != "") {
-        //console.log("first"+t[c].word+t[c].value);
-        document.getElementById("common").innerHTML = t[c].word + " is used " + t[c].value + " time(s)";
+    if (c >= 0 && t[c].value != "") {
+        document.getElementById("common").innerHTML = t[c].word;
+        document.getElementById("count").innerHTML = t[c].value;
     }
-   // document.getElementById("common").innerHTML = "Regular president";
-    if (c - 1 >= 0 && t[c - 1].word != "") {
-        //console.log("second" + t[c-1].word);
-                document.getElementById("common1").innerHTML = t[c - 1].word + " is used " + t[c - 1].value + " time(s)";
+    if (c - 1 >= 0 && t[c - 1].value != "") {
+        document.getElementById("common1").innerHTML = t[c - 1].word;
+        document.getElementById("count1").innerHTML = t[c - 1].value;
+        //  document.getElementById("common1").innerHTML = t[c - 1].word + " is used " + t[c - 1].value + " time(s)";
             }
-    if (c - 2 >= 0 && t[c - 2].word != "") {
-        //console.log("third" + t[c-2].word);
-                document.getElementById("common2").innerHTML = t[c - 2].word + " is used " + t[c - 2].value + " time(s)";
+    if (c - 2 >= 0 && t[c - 2].value != "") {
+        document.getElementById("common2").innerHTML = t[c - 2].word;
+        document.getElementById("count2").innerHTML = t[c - 2].value;
+        //     document.getElementById("common2").innerHTML = t[c - 2].word + " is used " + t[c - 2].value + " time(s)";
             }
     if (c - 3 >= 0 && t[c - 3].word != "") {
         //console.log("fourth" + t[c-3].word);
@@ -152,20 +151,22 @@ function displayCommmonWords(t, c) {
                 }
                 
             }
-            if (i == 0) {
-                document.getElementById("common3").innerHTML = t[c - 3].word + " is used " + t[c - 3].value + " time(s)";
+            if (i < 2) {
+                //document.getElementById("common3").innerHTML = t[c - 3].word + " is used " + t[c - 3].value + " time(s)";
+                document.getElementById("common3").innerHTML = t[c - 3].word;
+                document.getElementById("count3").innerHTML = t[c - 3].value;
             }
             else {
-                document.getElementById("common3").innerHTML = t[c - 3].word + " is used " + t[c - 3].value + " time(s)";
-                document.getElementById("explaination").innerHTML = "There are " + i + " word(s) with this frequency";
+                //document.getElementById("common3").innerHTML = t[c - 3].word + " is used " + t[c - 3].value + " time(s)";
+                document.getElementById("common3").innerHTML = t[c - 3].word;
+                document.getElementById("count3").innerHTML = t[c - 3].value;
+
+                document.getElementById("explanation").innerHTML = i + " words are used " + t[c-3].value + " times";
               //  console.log("ffff " + t[c - 5].word);
 
 
             }
-            if (c >= 0 && t[c].word != "") {
-                //console.log("first" + t[c].word + t[c].value);
-                document.getElementById("common4").innerHTML = t[c].word + " is used " + t[c].value + " time(s)";
-            }
+           
             //spin16.stop();
             }
 
@@ -174,5 +175,4 @@ function displayCommmonWords(t, c) {
 function minimizeC() {
 
     $("#common-box").toggle();
-
 }

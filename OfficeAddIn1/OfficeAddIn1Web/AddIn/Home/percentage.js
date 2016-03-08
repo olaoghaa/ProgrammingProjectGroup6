@@ -46,7 +46,9 @@ function displayPercentage(p) {
        p = p.toFixed(2);
     }
 
-    displayPerc.innerHTML = p + "%" ;
+    displayPerc.innerHTML = p + "%";
+    document.getElementById("progress").setAttribute("aria-valuenow", p);
+    document.getElementById("progress").setAttribute("style", ("width:"+p+"%;"));
 
 }
 

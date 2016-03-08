@@ -192,7 +192,7 @@
   
 }
 #common-box{
-    height: 200px;
+    height: 250px;
     width: 100%;
     background: #ffffff;
     padding-left: 35px;
@@ -219,8 +219,13 @@
 
 
 }
-#common-list{
-    
+common-table{
+    padding-top: 60px;
+}
+
+table{
+    text-align: left;
+    width: 250px;
 }
 
 #common_button{
