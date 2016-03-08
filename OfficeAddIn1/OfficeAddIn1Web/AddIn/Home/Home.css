@@ -73,7 +73,7 @@
    
 }
 #percent-box{
-    height:175px;
+    height:165px;
     width: 100%;    
     overflow:hidden;
 }
@@ -81,8 +81,7 @@
     background: #ffffff;
     float:right;
     overflow: visible;
-    padding-left: 10px;
-    padding-right: 140px; 
+    padding-left: 17px;
     position: absolute;
          
 }
@@ -92,8 +91,8 @@
     font-size: 15px;
     overflow:hidden;
        
-    padding-right: 60px;
-    padding-top: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
     left: 180px;
     position: absolute;
 }
@@ -114,7 +113,7 @@
 
 }
 #word-aim{    
-    width: 100px;
+    width: 120px;
 }
 
 
