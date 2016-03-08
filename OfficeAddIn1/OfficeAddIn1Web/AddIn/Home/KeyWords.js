@@ -1,5 +1,5 @@
 ﻿var keywords = [];
-
+var numKeywords = [];
 function addKeywords() {
 
     var value = document.getElementById('keywords').value;
@@ -30,84 +30,78 @@ function displayKeywords() {
 
 
 function calculateKeywords() {
-    var numKeywords = [];
+   
     for (var i = 0; i < keywords.length; i++) {
         numKeywords.push(0);
     }
-    console.log("yas");    
-           Word.run(function (context) {               
-               var thistext = context.document.body;
-               context.load(thistext);
-               return context.sync().then(function () {                
-                   var text = thistext.text;                   
-                   for (var i = 0; i < keywords.length; i++) {
-                       var re = new RegExp(keywords[i].toString(), 'gi');                       
-                       var num = text.match(re);                      
-                       if (num != null) {
-                           numKeywords[i] = num.length;                           
-                       }
-                   }
-               });
-                                      
-              
-           });
-           displayKeywordFreqs(numKeywords);
-}
-function calc() {
     Word.run(function (context) {
-        var searchResults = context.document.body.search('apple', options);      
-        context.load(searchResults);        
-        return context.sync().then(function () {
-            console.log('Found count: ' + searchResults.items.length);
-
-        });
+        for (var i = 0; i < keywords.length; i++) {
+            var searchResults = context.document.body.search(keywords[i], { ignorePunct: true });
+            context.load(searchResults);
+            return context.sync().then(function () {
+                var len = searchResults.items.length;
+                console.log('Found count: ' + len);
+                if (searchResults != null) {
+                    add(i, len);
+                    numKeywords[i] = len;                    
+                    console.log(numKeywords[i]);
+                    
+                    
+                }
+                
+            });            
+        }
+        
     })
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-})
+    console.log(numKeywords[0]);
+    displayKeywordFreqs();
+    
+}
+
+function add(index, num ) {
+    numKeywords[index] = num;
 }
 
 
-function displayKeywordFreqs(freqs) {
 
-    var keywordfreqs = [];
-    for (var i = 0; i < keywords.length; i++){
-        keywordfreqs.push(keywords[i] + " ");
-        keywordfreqs.push(freqs[i] + "\n");
 
-    }
 
-    var table = document.createElement("TABLE");
-    table.border = "0";
-    var columnCount = keywordfreqs.length;
-    var row = table.insertRow(-1);
+ function displayKeywordFreqs() {
+
+     var keywordfreqs = [];
+     for (var i = 0; i < keywords.length; i++) {
+         keywordfreqs.push(keywords[i] + " ");
+         console.log(numKeywords[i]);
+         keywordfreqs.push(numKeywords[i] + "\n");
+
+     }
+
+     var table = document.createElement("TABLE");
+     table.border = "0";
+     var columnCount = keywordfreqs.length;
+     var row = table.insertRow(-1);
+
+     var headerCell = document.createElement("TH");
+     headerCell.innerHTML = "keywords";
+     row.appendChild(headerCell);
+     headerCell = document.createElement("TH");
+     headerCell.innerHTML = "times used";
+     row.appendChild(headerCell);
+
+     for (var i = 0; i < keywordfreqs.length; i += 2) {
+         row = table.insertRow(-1);
+         var cell = row.insertCell(-1);
+         cell.innerHTML = keywordfreqs[i];
+         cell = row.insertCell(-1);
+         cell.innerHTML = keywordfreqs[i + 1];
+     }
+
+     var keyTable = document.getElementById("keyTable");
+     keyTable.innerHTML = "";
+     keyTable.appendChild(table);
     
-    var headerCell = document.createElement("TH");
-    headerCell.innerHTML = "keywords";
-    row.appendChild(headerCell);
-    headerCell = document.createElement("TH");
-    headerCell.innerHTML = "times used";
-    row.appendChild(headerCell);
 
-    for (var i = 0; i < keywordfreqs.length; i+=2) {
-        row = table.insertRow(-1);
-        var cell = row.insertCell(-1);
-        cell.innerHTML = keywordfreqs[i];
-        cell = row.insertCell(-1);
-        cell.innerHTML = keywordfreqs[i + 1];
-    }
-
-    var keyTable = document.getElementById("keyTable");
-    keyTable.innerHTML = "";
-    keyTable.appendChild(table);
-    
-
-    //document.getElementById("keywordFreq").innerHTML = keywordfreqs;   
-
-}
+ }
 
 function clearKeywords() {
     keywords = [];
