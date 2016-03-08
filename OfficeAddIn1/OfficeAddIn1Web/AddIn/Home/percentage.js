@@ -1,4 +1,4 @@
-﻿
+﻿var thing = setInterval(getNumberOfWords, 1000);
 function getNumberOfWords() {
     Word.run(function (context) {
         var doc = context.document;
@@ -49,3 +49,4 @@ function displayPercentage(p) {
     displayPerc.innerHTML = p + "%" ;
 
 }
+
