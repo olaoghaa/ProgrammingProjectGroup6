@@ -1,29 +1,23 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <title></title>
-    <script src="../../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
 
+    <script src="../../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
     <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-
-
-
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
-
     <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
     <!-- <script src="../../Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>  -->
     <!-- <script src="../../Scripts/Office/1/office.js" type="text/javascript"></script>  -->
-
     <link href="../App.css" rel="stylesheet" type="text/css" />
     <script src="../App.js" type="text/javascript"></script>
-
     <link href="Home.css" rel="stylesheet" type="text/css" />
     <script src="Home.js" type="text/javascript"></script>
-
     <script type="text/javascript" src="UI.js" defer></script>
     <script type="text/javascript" src="percentage.js" defer></script>
     <script type="text/javascript" src="EssayStructure.js" defer></script>
@@ -37,178 +31,175 @@
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-    <script> hideAll(); </script>
-
 </head>
-<body >
+
+<body>
 
     <div id="content-header">
         <input type="button" id="hide" value="" onclick="hideAll()" />
         <input type="button" id="show" value="" onclick="openAll()" />
         <input type="button" id="refresh" value="" onclick="refreshData()" />
-
     </div>
 
-
-    <div  id="content-main">
+    <div id="content-main">
 
         <div id="percentage-testing">
 
             <div id="percent_title_bar">
-
                 <input type="button" id="percent_minimize" value="Percentage Completion" onclick="minimizeP();">
             </div>
 
-          
-
-                        <div id="percent-box">
-
-                            <div class="container-fluid" style="padding-left: 0px !important; padding-right: 0px !important;">
-
-                                <div class="progress">
-
-                                    <div id="progress" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
-                                         aria-valuemin="0" aria-valuemax="100" style="width:0%;">
 
 
+            <div id="percent-box">
 
+                <div class="container-fluid" style="padding-left: 0px !important; padding-right: 0px !important;">
 
-                                    </div>
+                    <div class="progress">
 
-                                </div>
-
-
-                                <div id="percent-contentA">
-
-
-
-                                    <p style="font-size:55px" id="percentage"> 0%  </p>
-
-                                    <input type="button" id="percent-calculate" value="Calculate" onclick="getNumberOfWords();">
+                        <div id="progress" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
+                             aria-valuemin="0" aria-valuemax="100" style="width:0%;">
 
 
 
 
-                                </div>
+                        </div>
 
-                                <div id="percent-contentB">
-
-                                    <p> of </p>
-                                    <input type="text" id="word-aim" placeholder="Words Needed" />
-                                    <p> complete </p>
-                                </div>
-
-                            </div>
                     </div>
-            </div>
-
-        <div id="formatting">
-
-                        <div id="format_title_bar">
-                            <input type="button" id="format_minimize" value="Auto-Formatting Tool" onclick="minimizeF();">
-                        </div>
-
-                        <div id="format-box">
-
-                            <form name="format">
-                                <table border="0" cellspacing="0" cellpadding="0">
+                </div>
 
 
-                                    <tr>
-                                        <td>
-                                            <p>
-                                                <!--you can change the rows/cols values for a different size textbox-->
-                                                <textarea id="Structure" name="input" rows="5" cols="25">Introduction&#10;Point 1&#10;Point 2&#10;Conclusion</textarea>
-                                            </p>
-                                        </td>
-                                    </tr>
+                <div id="percent-contentA">
 
-
-
-
-
-                                    <tr>
-                                        <td>
-                                            <p>
-                                                <!-- This table shit is just for better formatting of the app, ignore it-->
-                                                <input type="button" id="format-button" value="Input Structure" onclick="getStructureInput();" />
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </table>
-
-                            </form>
-                        </div>
-                    </div>
-
-        <div id="Common Words">
-
-                        <div id="common_title_bar">
-                            <input type="button" id="common_minimize" value="List Common Words" onclick="minimizeC();">
-                        </div>
-
-                        <div id="common-box">
-                            <div id="common-button-div">
-
-                                <input type="button" id="common-button" value="Find Common Words" onclick="getMostCommonWords();" />
-                            </div>
-
-
-                            <div id="common-table-div">
-                                <table id="common-table">
-
-                                    <tr>
-                                        <th>Word</th>
-                                        <th>Times Used</th>
-                                    </tr>
-                                    <tr>
-                                        <td><p id="common"></p></td>
-                                        <td><p id="count"></p></td>
-                                    </tr>
-                                    <tr>
-                                        <td><p id="common1"></p></td>
-                                        <td><p id="count1"></p></td>
-                                    </tr>
-                                    <tr>
-                                        <td><p id="common2"></p></td>
-                                        <td><p id="count2"></p></td>
-                                    </tr>
-                                    <tr>
-                                        <td><p id="common3"></p></td>
-                                        <td><p id="count3"></p></td>
-                                    </tr>
-                                </table>
-
-                                </div>
-                            </div>
-                        </div>
-
-        <div id="Key Words">
-
-                        <div id="key_title_bar">
-                            <input type="button" id="key_minimize" value="Key Words Tool" onclick="minimizeK();">
-                        </div>
-
-                        <div id="key-box">
-
-                            <form>
-
-                                <input type="text" id="keywords" placeholder="enter keywords here" />
-                                <input type="button" id="add_key" value="Add Keywords" onclick="addKeywords();" />
-
-                                <p id="keyword"></p>
-
-                            </form>
-
-
-                            <input type="button" id="check_key" value="Check for keywords" onclick="calculateKeywords();" />
-                            <hr />
-                            <div id="keyTable"> </div>
-                            <input type="button" id="clr_key" value="Clear keywords" onclick="clearKeywords();" />
-                        </div>
-                    </div>
+                    <p style="font-size:55px" id="percentage"> 0%  </p>
+                    <input type="button" id="percent-calculate" value="Calculate" onclick="getNumberOfWords();">
 
 
                 </div>
+
+                <div id="percent-contentB">
+                    <p> of </p>
+                    <input type="text" id="word-aim" placeholder="Words Needed" />
+                    <p> complete </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="formatting">
+
+            <div id="format_title_bar">
+
+                <input type="button" id="format_minimize" value="Auto-Formatting Tool" onclick="minimizeF();">
+
+            </div>
+
+            <div id="format-box">
+                <form name="format">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <p>
+                                    <!--you can change the rows/cols values for a different size textbox-->
+                                    <textarea id="Structure" name="input" rows="5" cols="25">Introduction&#10;Point 1&#10;Point 2&#10;Conclusion</textarea>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>
+                                    <!-- This table shit is just for better formatting of the app, ignore it-->
+                                    <input type="button" id="format-button" value="Input Structure" onclick="getStructureInput();" />
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+            </div>
+
+        </div>
+
+        <div id="Common Words">
+
+            <div id="common_title_bar">
+                <input type="button" id="common_minimize" value="List Common Words" onclick="minimizeC();">
+            </div>
+
+            <div id="common-box">
+                <div id="common-button-div">
+
+                    <input type="button" id="common-button" value="Find Common Words" onclick="getMostCommonWords();" />
+                </div>
+
+
+                <div id="common-table-div">
+                    <table id="common-table">
+
+                        <tr>
+                            <th>Word</th>
+                            <th>Times Used</th>
+                        </tr>
+                        <tr>
+                            <td><p id="common"></p></td>
+                            <td><p id="count"></p></td>
+                        </tr>
+                        <tr>
+                            <td><p id="common1"></p></td>
+                            <td><p id="count1"></p></td>
+                        </tr>
+                        <tr>
+                            <td><p id="common2"></p></td>
+                            <td><p id="count2"></p></td>
+                        </tr>
+                        <tr>
+                            <td><p id="common3"></p></td>
+                            <td><p id="count3"></p></td>
+                        </tr>
+                        <tr>
+                            <td><p id="explanation"></p></td>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="Key Words">
+
+            <div id="key_title_bar">
+                <input type="button" id="key_minimize" value="Key Words Tool" onclick="minimizeK();">
+            </div>
+
+            <div id="key-box">
+
+                <form>
+
+                    <input type="text" id="keywords" placeholder="enter keywords here" />
+                    <input type="button" id="add_key" value="Add Keywords" onclick="addKeywords();" />
+                    <p id="keyword"></p>
+                </form>
+
+                <input type="button" id="check_key" value="Check for keywords" onclick="calculateKeywords();" />
+                <hr />
+                <div id="keyTable"> </div>
+
+                <div id="key-table-div">
+                    <table id="key-table"></table>
+
+
+                </div>
+
+
+                <input type="button" id="clr_key" value="Clear keywords" onclick="clearKeywords();" />
+
+            </div>
+
+        </div>
+
+    </div>
 </body>
 </html>
