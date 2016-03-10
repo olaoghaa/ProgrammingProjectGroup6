@@ -73,7 +73,7 @@
    
 }
 #percent-box{
-    height:175px;
+    height:165px;
     width: 100%;    
     overflow:hidden;
 }
@@ -82,7 +82,7 @@
     float:right;
     overflow: visible;
     padding-left: 10px;
-    padding-right: 140px; 
+    
     position: absolute;
          
 }
@@ -92,8 +92,8 @@
     font-size: 15px;
     overflow:hidden;
        
-    padding-right: 60px;
-    padding-top: 30px;
+    padding-right: 30px;
+    padding-top: 12px;
     left: 180px;
     position: absolute;
 }
@@ -114,7 +114,7 @@
 
 }
 #word-aim{    
-    width: 100px;
+    width: 115px;
 }
 
 
@@ -192,7 +192,7 @@
   
 }
 #common-box{
-    height: 200px;
+    height: 250px;
     width: 100%;
     background: #ffffff;
     padding-left: 35px;
@@ -219,11 +219,13 @@
 
 
 }
-#common-table{
-   font-family: Verdana, Arial, sans-serif;
-   font-size: 11px;
-   border-width: 1px;
-   height: 90px;
+common-table{
+    padding-top: 60px;
+}
+
+table{
+    text-align: left;
+    width: 250px;
 }
 
 #common_button{
