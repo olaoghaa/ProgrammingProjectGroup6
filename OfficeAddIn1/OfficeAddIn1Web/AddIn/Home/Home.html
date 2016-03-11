@@ -27,6 +27,15 @@
         the,be,to,of,the,and,a,in,that,have,i,had,mr,mrs,ms,are,from,,it,was,is,for,not,on,with,he,as,you,do,at,this,his,by,they,we,say,her,she,or,an,will,my,one,all,there,their,what,up,out,if,who,get,which,go,me,can,no,him,know,take,into,your,them,see,other,than,now,come,its,also,back,use,two,how,our,way,even,new,want,any,these,day,us
         
     </script>
+
+    <script>
+        function refreshAll(){
+            setRefreshCW();
+            setRefreshKW();
+            setRefreshP();        
+        }
+    </script>
+
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -39,6 +48,7 @@
         <input type="button" id="hide" value="" onclick="hideAll()" />
         <input type="button" id="show" value="" onclick="openAll()" />
         <input type="button" id="refresh" value="" onclick="refreshData()" />
+        <label style="color:black"><input type="checkbox" id="checkbox" onchange="refreshAll()"/> Auto refresh?</label>
     </div>
 
     <div id="content-main">
@@ -90,7 +100,7 @@
 
             <div id="format_title_bar">
 
-                <input type="button" id="format_minimize" value="Auto-Formatting Tool" onclick="minimizeF();">
+                <input type="button" id="format_minimize" value="Insert Essay Plan" onclick="minimizeF();">
 
             </div>
 
@@ -156,10 +166,10 @@
                                         <td><p id="common3"></p></td>
                                         <td><p id="count3"></p></td>
                                     </tr>
-                                    <tr>
-                                        <td><p id="explanation"></p></td>
-                                    </tr>
                                 </table>
+
+                                <br />
+                            <p id="explanation"></p>
 
 
                             </div>

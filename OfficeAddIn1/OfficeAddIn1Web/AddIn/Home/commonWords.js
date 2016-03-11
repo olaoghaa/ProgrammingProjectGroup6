@@ -1,5 +1,16 @@
 // JavaScript source code
+var commonWordsInterval;
 
+function setRefreshCW() {
+    
+    if (document.getElementById("checkbox").checked) {
+        commonWordsInterval = setInterval(getMostCommonWords, 1000);
+    } else {
+        clearInterval(commonWordsInterval);
+    }
+
+
+}
 
 function wordSize(name, value) {
     this.name = name;
@@ -161,7 +172,7 @@ function displayCommmonWords(t, c) {
                 document.getElementById("common3").innerHTML = t[c - 3].word;
                 document.getElementById("count3").innerHTML = t[c - 3].value;
 
-                document.getElementById("explanation").innerHTML = i + " words are used " + t[c-3].value + " times";
+                document.getElementById("explanation").innerHTML = i + " more words are used " + t[c-3].value + " times";
               //  console.log("ffff " + t[c - 5].word);
 
 
