@@ -1,5 +1,19 @@
-﻿var thing = setInterval(getNumberOfWords, 1000);
+﻿var percentageInterval;
+
+function setRefreshP() {
+
+    console.log("YUPPEE");
+
+      if (document.getElementById("checkbox").checked) {
+        percentageInterval = setInterval(getNumberOfWords, 1000);
+    } else {
+        clearInterval(percentageInterval);
+    }
+}
+
 function getNumberOfWords() {
+
+   
     Word.run(function (context) {
         var doc = context.document;
         context.load(doc, 'body/text');
