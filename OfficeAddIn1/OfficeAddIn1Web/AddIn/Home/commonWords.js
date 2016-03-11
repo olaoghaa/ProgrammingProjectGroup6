@@ -16,10 +16,10 @@ function getMostCommonWords() {
             var count = 0;
             var i = 0;
             var xx = result;
-            var separators = [' ', '\\\ ', '-', '\\\(', '\\\)', '\\. ', '/', "\r\n", '\\\?'];
-            console.log(separators.join('|'));
+            var separators = [' ', '-', '\\\(', '\\\)', '\\\. ', '/', "\n", '\\\?'];
+            //console.log(separators.join('|'));
             var wordCount = result.value.split(new RegExp(separators.join('|'), 'g'));
-            console.log(wordCount)
+            //console.log(wordCount)
             //var wordCount = result.value.split(" ");
             // var max = result.value.split(" ").length;
             var max = wordCount.length;
@@ -32,6 +32,7 @@ function getMostCommonWords() {
             }
             var p = 0;
             while (p < max) {
+               // console.log(wordCount[p]);
                 dict[p].word = wordCount[p].toLowerCase();
                 dict[p].value = 1;
                 p++;
@@ -58,23 +59,23 @@ function getMostCommonWords() {
                         }
                         else {
                             dict[q].value = 0;
-                        }
+                            }
                     }
                     y++;
                 }
                 q++;
-            }
+        }
 
             count = max - 1;
             while (count >= 0) {
-                var you = 0;
-                while (you < listMax) {
-                    if (dict[count].word == filter[you]) {
-                        dict[count].value = 0;
-                    }
-                    you++;
-                }
-                count--;
+                   var you = 0;
+                   while (you < listMax) {
+                           if (dict[count].word == filter[you]) {
+                                  dict[count].value = 0;
+                            }
+                            you++;
+                   }
+                   count--;
             }
             selectionSort(dict);
             displayCommmonWords(dict, max - 1);
@@ -101,21 +102,21 @@ function bubbleSort(arr) {
 }
 
 function selectionSort(arr) {
-    var minIdx, temp,
-         len = arr.length;
-    for (var i = 0; i < len; i++) {
-        minIdx = i;
-        for (var j = i + 1; j < len; j++) {
-            if (arr[j].value < arr[minIdx].value) {
-                minIdx = j;
+       var minIdx, temp,
+            len = arr.length;
+        for (var i = 0; i < len; i++) {
+                minIdx = i;
+                for (var j = i + 1; j < len; j++) {
+                        if (arr[j].value < arr[minIdx].value) {
+                                minIdx = j;
             }
         }
-        temp = arr[i].value;
-        tmp = arr[i].word;
-        arr[i].value = arr[minIdx].value;
-        arr[i].word = arr[minIdx].word;
-        arr[minIdx].value = temp;
-        arr[minIdx].word = tmp;
+                temp = arr[i].value;
+                tmp = arr[i].word;
+                arr[i].value = arr[minIdx].value;
+                arr[i].word = arr[minIdx].word;
+                arr[minIdx].value = temp;
+                arr[minIdx].word = tmp;
     }
     return arr;
 }
@@ -131,17 +132,43 @@ function displayCommmonWords(t, c) {
         document.getElementById("common1").innerHTML = t[c - 1].word;
         document.getElementById("count1").innerHTML = t[c - 1].value;
         //  document.getElementById("common1").innerHTML = t[c - 1].word + " is used " + t[c - 1].value + " time(s)";
-    }
+            }
     if (c - 2 >= 0 && t[c - 2].value != "") {
         document.getElementById("common2").innerHTML = t[c - 2].word;
         document.getElementById("count2").innerHTML = t[c - 2].value;
         //     document.getElementById("common2").innerHTML = t[c - 2].word + " is used " + t[c - 2].value + " time(s)";
-    }
-    if (c - 3 >= 0 && t[c - 3].value != "") {
-        document.getElementById("common3").innerHTML = t[c - 3].word;
-        document.getElementById("count3").innerHTML = t[c - 3].value;
-        //document.getElementById("common3").innerHTML = t[c - 3].word + " is used " + t[c - 3].value + " time(s)";
-    }
+            }
+    if (c - 3 >= 0 && t[c - 3].word != "") {
+        //console.log("fourth" + t[c-3].word);
+            var x = c-4;
+            while (x >= 0) {
+                if (t[c - 3].value == t[x].value) {
+                    i += 1;
+                    x--;
+                }
+                else {
+                    break;
+                }
+                
+            }
+            if (i < 2) {
+                //document.getElementById("common3").innerHTML = t[c - 3].word + " is used " + t[c - 3].value + " time(s)";
+                document.getElementById("common3").innerHTML = t[c - 3].word;
+                document.getElementById("count3").innerHTML = t[c - 3].value;
+            }
+            else {
+                //document.getElementById("common3").innerHTML = t[c - 3].word + " is used " + t[c - 3].value + " time(s)";
+                document.getElementById("common3").innerHTML = t[c - 3].word;
+                document.getElementById("count3").innerHTML = t[c - 3].value;
+
+                document.getElementById("explanation").innerHTML = i + " more words are used " + t[c-3].value + " times";
+              //  console.log("ffff " + t[c - 5].word);
+
+
+            }
+           
+            //spin16.stop();
+            }
 
 }
 

@@ -1,5 +1,8 @@
 ﻿
+
 function getNumberOfWords() {
+
+   
     Word.run(function (context) {
         var doc = context.document;
         context.load(doc, 'body/text');
@@ -51,3 +54,4 @@ function displayPercentage(p) {
     document.getElementById("progress").setAttribute("style", ("width:"+p+"%;"));
 
 }
+

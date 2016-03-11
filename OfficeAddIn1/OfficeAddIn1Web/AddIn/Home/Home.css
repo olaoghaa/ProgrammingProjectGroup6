@@ -79,9 +79,10 @@
 }
 #percent-contentA{    
     background: #ffffff;
-    float:right;
+    /*float:right;*/
     overflow: visible;
-    padding-left: 17px;
+    padding-left: 10px;
+    
     position: absolute;
          
 }
@@ -92,7 +93,7 @@
     overflow:hidden;
        
     padding-right: 30px;
-    padding-top: 15px;
+    padding-top: 0px;
     left: 180px;
     position: absolute;
 }
@@ -113,7 +114,7 @@
 
 }
 #word-aim{    
-    width: 120px;
+    width: 115px;
 }
 
 
@@ -191,7 +192,7 @@
   
 }
 #common-box{
-    height: 200px;
+    height: 250px;
     width: 100%;
     background: #ffffff;
     padding-left: 75px;
@@ -294,6 +295,8 @@ table{
     font-size: 15px; 
     color:ghostwhite;
     cursor:pointer;
+    width: 120px;
+    left: 190px;
 }
 
 #check_key{
@@ -304,4 +307,9 @@ table{
     font-size: 15px; 
     color:ghostwhite;
     cursor:pointer;
+    width: 145px;
+}
+
+#key-table-div{
+    padding-left: 55px;
 }
