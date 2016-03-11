@@ -79,7 +79,7 @@
 }
 #percent-contentA{    
     background: #ffffff;
-    float:right;
+    /*float:right;*/
     overflow: visible;
     padding-left: 10px;
     
@@ -93,7 +93,7 @@
     overflow:hidden;
        
     padding-right: 30px;
-    padding-top: 12px;
+    padding-top: 0px;
     left: 180px;
     position: absolute;
 }
@@ -195,7 +195,7 @@
     height: 250px;
     width: 100%;
     background: #ffffff;
-    padding-left: 35px;
+    padding-left: 75px;
     padding-right: 15px;
     padding-top: 10px;
 }
@@ -295,6 +295,8 @@ table{
     font-size: 15px; 
     color:ghostwhite;
     cursor:pointer;
+    width: 120px;
+    left: 190px;
 }
 
 #check_key{
@@ -305,4 +307,9 @@ table{
     font-size: 15px; 
     color:ghostwhite;
     cursor:pointer;
+    width: 145px;
+}
+
+#keyTable{
+    padding-left: 55px;
 }

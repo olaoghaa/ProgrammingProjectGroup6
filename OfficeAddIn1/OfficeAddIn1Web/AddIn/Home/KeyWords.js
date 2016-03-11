@@ -1,19 +1,5 @@
 ﻿var keywords = [];
 var numKeywords = [];
-var keywordsInterval;
-
-function setRefreshKW() {
-
-    if (document.getElementById("checkbox").checked) {
-        keywordsInterval = setInterval(function () {
-            calculateKeywords();
-            displayKeywordFreqs();           
-        }, 1000);
-    } else {
-        clearInterval(keywordsInterval);
-    }
-    
-}
 
 function addKeywords() {
 

@@ -1,16 +1,5 @@
 // JavaScript source code
-var commonWordsInterval;
 
-function setRefreshCW() {
-    
-    if (document.getElementById("checkbox").checked) {
-        commonWordsInterval = setInterval(getMostCommonWords, 1000);
-    } else {
-        clearInterval(commonWordsInterval);
-    }
-
-
-}
 
 function wordSize(name, value) {
     this.name = name;
