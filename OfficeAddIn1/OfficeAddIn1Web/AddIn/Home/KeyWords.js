@@ -23,14 +23,29 @@ function addKeywords() {
 
     var table = document.getElementById('key-table');
 
-    ('key-table tr').remove();
+    while (table.rows.length > 1) {
+        table.deleteRow(table.rows.length-1);
+    }
+
 
     for (var i = 0; i < keywords.length; i++) {
-        document.getElementById(key).innerHTML = keywords[i];
+       // document.getElementById(key).innerHTML = keywords[i];
+
+        var key = 'key';
+        var count = 'kcount';
+        var num = i.toString();
+
+        key = key.concat(num);
+        count = count.concat(num);
 
         var row = table.insertRow(i);
+
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
+
+        cell1.id = key;
+        cell2.id = count;
+
     }
 
 
@@ -63,8 +78,8 @@ function calculateKeywords() {
 
     })
     console.log(numKeywords[0]);
-    displayKeywordFreqs();
-
+    //displayKeywordFreqs();
+    displayKeywords();
 }
 
 function add(index, num) {
@@ -72,7 +87,7 @@ function add(index, num) {
 }
 
 
-function displayKeywords2() {
+function displayKeywords() {
 
     for (var i = 0; i < keywords.length; i++) {
         var key = 'key';
@@ -88,7 +103,7 @@ function displayKeywords2() {
 
 }
 
-function displayKeywords() {
+function displayKeywords2() {
     document.getElementById("keyword").innerHTML = keywords;
 }
 
@@ -134,5 +149,5 @@ function displayKeywordFreqs() {
 function clearKeywords() {
     keywords = [];
     displayKeywords();
-    displayKeywordFreqs(keywords);
+   // displayKeywordFreqs(keywords);
 }
