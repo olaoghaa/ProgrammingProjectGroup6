@@ -38,13 +38,18 @@ function addKeywords() {
         key = key.concat(num);
         count = count.concat(num);
 
-        var row = table.insertRow(i);
+        var row = table.insertRow(i+1);
 
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
 
         cell1.id = key;
         cell2.id = count;
+
+        if (numKeywords[i] >= 0) { }
+        else {
+            numKeywords[i] = 0;
+        }
 
     }
 
@@ -55,10 +60,13 @@ function addKeywords() {
 
 function calculateKeywords() {
 
-    for (var i = 0; i < keywords.length; i++) {
+   /* for (var i = 0; i < keywords.length; i++) {
         numKeywords.push(0);
-    }
+    }*/
+    console.log('about to count');
     Word.run(function (context) {
+        console.log('counting');
+        
         for (var i = 0; i < keywords.length; i++) {
             var searchResults = context.document.body.search(keywords[i], { ignorePunct: true });
             context.load(searchResults);
@@ -77,6 +85,7 @@ function calculateKeywords() {
         }
 
     })
+    console.log('finished counting');
     console.log(numKeywords[0]);
     //displayKeywordFreqs();
     displayKeywords();
