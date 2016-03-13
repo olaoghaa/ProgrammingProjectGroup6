@@ -56,6 +56,8 @@ function addKeywords() {
 
 
     displayKeywords();
+    calculateKeywords();
+
 }
 
 function calculateKeywords() {

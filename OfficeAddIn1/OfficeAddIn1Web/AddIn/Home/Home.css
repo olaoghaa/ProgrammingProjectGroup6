@@ -1,52 +1,14 @@
 ﻿/* header */
 
-#hide{
-    background-image: url('../../Images/up.png');
-    
-    width: 26px;
-    height: 25px;
-
-    padding: 0;
-
-    position: inherit;
-    left:15px;
-    top:32px;
-     
-    z-index: 1000;
-    overflow: auto;
-
-   
-}
-
-#show{
-    
-    background-image: url('../../Images/down.png');
-    width: 25px;
-    height: 25px;
-
-    padding: 0;
-    cursor:pointer;
-
-    position:absolute;
-    left:55px;
-    top:32px;
-    
-    
-}
 
 #refresh{
-    background-image: url('../../Images/refresh.png');
-    
+    background-image: url('../../Images/refresh.png');    
     width: 50px;
     height: 60px;    
     cursor:pointer;
     position:absolute;
     left: 235px;
-    top:9px;
-   
-
-
-
+    top:9px; 
 }
 
 
@@ -56,22 +18,10 @@
 }
 
 #percent_title_bar{   
-    height: 35px;
-    width: 100%;
-    
-    
+    height: 10px;
+    width: 100%;      
 }
-#percent_minimize{
-    text-align:center;
-    width: 100%;
-    height: 35px;
-    font-size: 15px;    
-    color: #ffffff;
-    background:#2a579a;
-    padding: 0;
-    cursor:pointer;
-   
-}
+
 #percent-box{
     height:165px;
     width: 100%;    
@@ -81,17 +31,14 @@
     background: #ffffff;
     /*float:right;*/
     overflow: visible;
-    padding-left: 10px;
-    
-    position: absolute;
-         
+    padding-left: 10px;    
+    position: absolute;         
 }
 
 #percent-contentB{    
     background: #ffffff;
     font-size: 15px;
-    overflow:hidden;
-       
+    overflow:hidden;       
     padding-right: 30px;
     padding-top: 0px;
     left: 180px;
@@ -107,12 +54,9 @@
     font-size: 15px;
     color:ghostwhite;
     left: 35px;
-    cursor:pointer;
-
-   
-
-
+    cursor:pointer;  
 }
+
 #word-aim{    
     width: 115px;
 }
@@ -123,6 +67,7 @@
 #formatting{
     width: 100%;
     border: 1px;
+    text-align:center;
 }
 
 #format_title_bar{
@@ -130,24 +75,12 @@
     height: 35px;
     width: 100%;
 }
-#format_minimize{
-    text-align: center;
-    font-size: 15px;
-    width: 100%;
-    height: 35px;
-    color: #ffffff;
-    background: #2a579a;
-    padding: 0;
-    cursor:pointer;
 
-   
-}
 #format-box{
     height: 180px;
     width: 100%;
-    background: #ffffff;
-    
-    padding-top: 15px;
+    background: #ffffff;   
+    padding-top: 55px;
     padding-left: 50px;
     padding-right: 15px;
 
@@ -161,9 +94,7 @@
     font-size: 15px;
     left: 85px;
     color:ghostwhite;
-    cursor:pointer;
-
-   
+    cursor:pointer;   
 }
 
 
@@ -172,26 +103,17 @@
 #Common Words{
     width: 100%;
     border: 1px;
+    text-align:center;
 }
 
 #common_title_bar{
-  
+     text-align:center;
     height: 35px;
     width: 100%;
 }
-#common_minimize{
-    text-align:center;
-    font-size: 15px;    
-    width: 100%;
-    height: 35px;
-    color: #ffffff;
-    background: #2a579a;
-    padding: 0;
-    cursor:pointer;
 
-  
-}
 #common-box{
+    text-align:center;
     height: 250px;
     width: 100%;
     background: #ffffff;
@@ -212,12 +134,7 @@
     color:ghostwhite;
     left: 35px;
     width: 200px;
-
-   -moz-box-shadow:    inset 0 0 3px #000000;
-   -webkit-box-shadow: inset 0 0 3px #000000;
-   box-shadow:         inset 0 0 3px #000000;
-
-
+    
 }
 common-table{
     padding-top: 60px;
@@ -229,13 +146,14 @@ table{
 }
 
 #common_button{
+    vertical-align:central;
+    text-align:center;
     position:absolute;
     transition: .5s ease;    
     height: 30px ;
     background: #2a579a;
     z-index:1000;
-    font-size: 15px;
-    left: 85px;
+    font-size: 15px;    
     top:560px;
     color:ghostwhite;
     cursor:pointer;
@@ -247,6 +165,7 @@ table{
 #Key Words{
     width: 100%;
     border: 1px;
+    text-align:center;
 }
 
 #key_title_bar{
@@ -254,19 +173,7 @@ table{
     height: 35px;
     width: 100%;
 }
-#key_minimize{
-    text-align:center;
-    font-size: 15px;
-    border: solid 1px;
-    width: 100%;
-    height: 35px;
-    color: #ffffff;
-    background: #2a579a;
-    padding: 0;
-    cursor:pointer;
- 
-   
-}
+
 #key-box{
     height: 250px;
     width: 100%;
@@ -312,4 +219,65 @@ table{
 
 #key-table-div{
     padding-left: 55px;
+}
+
+/*----- Tabs -----*/
+.tabs { 
+    display:inline-block;
+    word-break:break-word;
+}
+ 
+    /*----- Tab Links -----*/
+    /* Clearfix */
+.tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+   
+}
+ul{    
+    font-size:0;
+    column-count:2; 
+    
+ }
+
+.tab-links li {   
+    list-style:none;
+    
+}
+ 
+.tab-links a {
+   
+    padding:5px 50%;
+    display:inline-block;            
+    background:#2a579a;
+    font-size:13px;
+    text-align:left;
+    color:white;   
+    transition:all linear 0.15s; 
+}
+ 
+.tab-links a:hover {
+    background:#3E6DB6;
+    text-decoration:none;
+    color:ghostwhite;
+}
+ 
+li.active a, li.active a:hover {
+    background:#fff;
+    color:#4c4c4c;
+}
+ 
+    /*----- Content of Tabs -----*/
+.tab-content {    
+               
+    background:#fff;       
+}
+ 
+.tab {
+    display:none;
+}
+ 
+.tab.active {
+    display:block;
 }
