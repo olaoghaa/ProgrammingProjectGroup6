@@ -247,14 +247,17 @@ ul{
 }
  
 .tab-links a {
-   
-    padding:5px 50%;
+   height: 40px;
+    width: 100%;
+    padding-top: 15px;
+    padding-left:5px 30%;
     display:inline-block;            
     background:#2a579a;
     font-size:13px;
-    text-align:left;
+    text-align:center;
     color:white;   
     transition:all linear 0.15s; 
+    
 }
  
 .tab-links a:hover {
@@ -265,7 +268,8 @@ ul{
  
 li.active a, li.active a:hover {
     background:#fff;
-    color:#4c4c4c;
+    color:#2a579a;
+    text-decoration:none;
 }
  
     /*----- Content of Tabs -----*/
