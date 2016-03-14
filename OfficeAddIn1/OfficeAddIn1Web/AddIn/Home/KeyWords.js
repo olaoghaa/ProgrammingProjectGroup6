@@ -68,8 +68,8 @@ function calculateKeywords() {
         console.log('numKeywords length = ' + numKeywords.length);
 
         var i = 0;
-        //for (var i = 0; i < keywords.length; i++) {
-        while(i < keywords.length){
+        for (var i = keywords.length-1; i >= 0; i--) {
+        //while(1){
             console.log('loop ' + i);
 
             var searchResults = context.document.body.search(keywords[i], { ignorePunct: true });
@@ -113,8 +113,8 @@ function displayKeywords() {
         key = key.concat(num);
         count = count.concat(num);
 
-        console.log('key ' + i + ' = ' + key);
-        console.log('kcount ' + i + ' = ' + count);
+        //console.log('key ' + i + ' = ' + key);
+        //console.log('kcount ' + i + ' = ' + count);
 
 
         document.getElementById(key).innerHTML = keywords[i];
