@@ -55,7 +55,12 @@ function addKeywords() {
 
 
 
-    displayKeywords();
+    calcKeywords();
+}
+
+function calcKeywords() {
+    calculateKeywords();
+    calculateKeywords();
 }
 
 function calculateKeywords() {
@@ -67,8 +72,8 @@ function calculateKeywords() {
         console.log('keywords length = ' + keywords.length);
         console.log('numKeywords length = ' + numKeywords.length);
 
-        var i = 0;
-        for (var i = keywords.length-1; i >= 0; i--) {
+       // var i = 0;
+        for (var i = 0; i < keywords.length; i++) {
         //while(1){
             console.log('loop ' + i);
 
@@ -86,7 +91,7 @@ function calculateKeywords() {
                 }
 
             });
-            i++;
+            //i++;
         }
 
     })
