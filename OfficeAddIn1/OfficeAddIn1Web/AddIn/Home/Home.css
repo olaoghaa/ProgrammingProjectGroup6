@@ -2,19 +2,30 @@
 
 
 #refresh{
-    background-image: url('../../Images/refresh.png');    
-    width: 50px;
-    height: 60px;    
+    background-image: url('../../Images/new_refresh.png');        
     cursor:pointer;
-    position:absolute;
-    left: 235px;
-    top:9px; 
+    position: absolute;
+    left: 5px;
+    background-color: transparent;
+    background-repeat: no-repeat; 
+    height: auto;
+    width: 20px;
+    padding: 0;
+    background-size: auto 100%;
+    border: 0;
 }
 
+/* Percentage Text */
+#percentage{
+    margin: 0;
+    margin-right: 20px;
+    float: right;
+}
 
 /* % tool style */
 #percentage-testing{
-    width: 100%;  
+    width: 100%; 
+    height: 100%; 
 }
 
 #percent_title_bar{   
@@ -23,32 +34,41 @@
 }
 
 #percent-box{
-    height:165px;
+    height: 100%;
     width: 100%;    
     overflow:hidden;
 }
-#percent-contentA{    
-    background: #ffffff;
+.percent-content{    
     /*float:right;*/
     overflow: visible;
     padding-left: 10px;    
-    position: absolute;         
+    position: absolute; 
+    color: #616161; 
+    width: 100%;       
 }
 
-#percent-contentB{    
-    background: #ffffff;
-    font-size: 15px;
-    overflow:hidden;       
-    padding-right: 30px;
-    padding-top: 0px;
-    left: 180px;
-    position: absolute;
+.percent-content table{
+    width:100%
+}
+
+.percent-content td{
+}
+
+/*
+    Table Columns Left and Right
+*/
+#pc-left{
+    width: 35%;
+}
+
+#pc-right{
+    width: 65%;
 }
 
 #percent-calculate{
-    position:absolute;
     transition: .5s ease;    
-    height: 30px ;
+    height: 30px;
+    width: 80%;
     background:#2a579a;
     z-index:1000;
     font-size: 15px;
@@ -58,7 +78,9 @@
 }
 
 #word-aim{    
-    width: 115px;
+    width: 80%;
+    height: 30px;
+    text-align: center;
 }
 
 
@@ -284,4 +306,15 @@ li.active a, li.active a:hover {
  
 .tab.active {
     display:block;
+}
+    /*----- Content of Tabs -----*/
+
+
+/**
+    Overrides the default values of
+    the progress bar.
+    MH.
+*/
+.progress {
+    margin-bottom: 0px !important;
 }
