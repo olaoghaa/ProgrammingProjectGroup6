@@ -44,8 +44,6 @@
 
 <body>
 
-<body>
-
     <div id="content-header">
         <input type="button" id="hide" value="" onclick="hideAll()" />
         <input type="button" id="show" value="" onclick="openAll()" />
@@ -154,8 +152,8 @@
                                         <th>Times Used</th>
                                     </tr>
                                     <tr>
-                                        <td><p id="common"></p></td>
-                                        <td><p id="count"></p></td>
+                                        <td><p id="common0"></p></td>
+                                        <td><p id="count0"></p></td>
                                     </tr>
                                     <tr>
                                         <td><p id="common1"></p></td>
@@ -192,32 +190,32 @@
 
                                 <input type="text" id="keywords" placeholder="enter keywords here" />
                                 <input type="button" id="add_key" value="Add Keywords" onclick="addKeywords();" />
-                    <p id="keyword"></p>
-                </form>
+                                <p id="keyword"></p>
+                            </form>
 
-                <form>
-                    <input type="button" id="check_key" value="Check for keywords" onclick="calculateKeywords();" />
+                             <form>
+                                  <input type="button" id="check_key" value="Check for keywords" onclick="calcKeywords();" />
           
-                    <input type="button" id="clr_key" value="Clear keywords" onclick="clearKeywords();" />
+                                  <input type="button" id="clr_key" value="Clear keywords" onclick="clearKeywords();" />
                             </form>
 
                             <hr />
                            
 
-                <div id="key-table-div">
-                    <table id="key-table">
-                        <tr>
-                            <th>Keyword</th>
-                            <th>Times Used</th>
-                        </tr>
+                            <div id="key-table-div">
+                                <table id="key-table">
+                                <tr>
+                                <th>Keyword</th>
+                                <th>Times Used</th>
+                                </tr>
 
-                    </table>
-                </div>
+                                </table>
+                            </div>
 
-                    </div>
+                       </div>
 
-        </div>
+                  </div>
 
-                </div>
+     </div>
 </body>
 </html>
