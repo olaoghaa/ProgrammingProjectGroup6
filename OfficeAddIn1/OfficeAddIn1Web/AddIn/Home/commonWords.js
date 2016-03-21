@@ -6,82 +6,87 @@ function wordSize(name, value) {
     this.value = value;
 }
 
+function getAllText() {
+
+}
+
 function getMostCommonWords() {
-    Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
-        function (result) {
+    Word.run(function (context) {
+            var doc = context.document;
+            context.load(doc, 'body/text');
             var list = document.getElementById('words');
             var filter1 = list.innerHTML;
             var filter = filter1.split(",");
             var listMax = filter.length;
             var count = 0;
             var i = 0;
-            var xx = result;
+            var xx = doc;
             var separators = [' ', '-', '\\\(', '\\\)', '\\\. ', '/', "\n", '\\\?'];
-            //console.log(separators.join('|'));
-            var wordCount = result.value.split(new RegExp(separators.join('|'), 'g'));
-            //console.log(wordCount)
-            //var wordCount = result.value.split(" ");
-            // var max = result.value.split(" ").length;
-            var max = wordCount.length;
-            var dict = [max];
-            var county = new Array(max);
-            var counter = 0;
-            while (i < max) {
-                dict[i] = { word: "", value: 0 };
-                i++;
-            }
-            var p = 0;
-            while (p < max) {
-               // console.log(wordCount[p]);
-                dict[p].word = wordCount[p].toLowerCase();
-                dict[p].value = 1;
-                p++;
-            }
-            while (count < max) {
-                var t = 0;
-                while (t < max) {
-                    if (dict[count].word == dict[t].word) {
-                        if (count < t) {
-                            dict[count].value += 1;
-                        }
-                    }
-                    t++;
+        //console.log(separators.join('|'));            
+            context.sync().then(function () {                
+                var wordCount = doc.body.text.split(new RegExp(separators.join('|'), 'g'));
+                //console.log(wordCount)
+                //var wordCount = result.value.split(" ");
+                // var max = result.value.split(" ").length;
+                var max = wordCount.length;
+                var dict = [max];
+                var county = new Array(max);
+                var counter = 0;
+                while (i < max) {
+                    dict[i] = { word: "", value: 0 };
+                    i++;
                 }
-                count++;
-            }
-            var q = 0;
-            while (q < max) {
-                var y = 0;
-                while (y < max) {
-                    if (dict[q].word == dict[y].word && q != y) {
-                        if (y > q) {
-                            dict[y].value = 0;
-                        }
-                        else {
-                            dict[q].value = 0;
-                            }
-                    }
-                    y++;
+                var p = 0;
+                while (p < max) {
+                    // console.log(wordCount[p]);
+                    dict[p].word = wordCount[p].toLowerCase();
+                    dict[p].value = 1;
+                    p++;
                 }
-                q++;
-        }
-
-            count = max - 1;
-            while (count >= 0) {
-                   var you = 0;
-                   while (you < listMax) {
-                           if (dict[count].word == filter[you]) {
-                                  dict[count].value = 0;
+                while (count < max) {
+                    var t = 0;
+                    while (t < max) {
+                        if (dict[count].word == dict[t].word) {
+                            if (count < t) {
+                                dict[count].value += 1;
                             }
-                            you++;
-                   }
-                   count--;
-            }
-            selectionSort(dict);
-            displayCommmonWords(dict, max - 1);
-        }
-    );
+                        }
+                        t++;
+                    }
+                    count++;
+                }
+                var q = 0;
+                while (q < max) {
+                    var y = 0;
+                    while (y < max) {
+                        if (dict[q].word == dict[y].word && q != y) {
+                            if (y > q) {
+                                dict[y].value = 0;
+                            }
+                            else {
+                                dict[q].value = 0;
+                            }
+                        }
+                        y++;
+                    }
+                    q++;
+                }
 
+                count = max - 1;
+                while (count >= 0) {
+                    var you = 0;
+                    while (you < listMax) {
+                        if (dict[count].word == filter[you]) {
+                            dict[count].value = 0;
+                        }
+                        you++;
+                    }
+                    count--;
+                }
+                selectionSort(dict);
+                displayCommmonWords(dict, max - 1);
+            });
+    });
 }
 
 function bubbleSort(arr) {
