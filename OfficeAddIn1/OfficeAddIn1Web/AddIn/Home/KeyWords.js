@@ -59,11 +59,17 @@ function addKeywords() {
 }
 
 function calcKeywords() {
-    calculateKeywords();
-    calculateKeywords();
+    for (var i = 0; i < keywords.length; i++) {
+        calculateKeywords(i);
+    }
+
+    console.log('finished counting');
+    console.log(numKeywords[0]);
+
+    displayKeywords();
 }
 
-function calculateKeywords() {
+function calculateKeywords(i) {
 
     console.log('about to count');
     Word.run(function (context) {
@@ -73,7 +79,7 @@ function calculateKeywords() {
         console.log('numKeywords length = ' + numKeywords.length);
 
         // var i = 0;
-        for (var i = 0; i < keywords.length; i++) {
+        //for (var i = 0; i < keywords.length; i++) {
             //while(1){
             console.log('loop ' + i);
 
@@ -92,13 +98,13 @@ function calculateKeywords() {
 
             });
             //i++;
-        }
+        //}
 
     });
-    console.log('finished counting');
+/*    console.log('finished counting');
     console.log(numKeywords[0]);
     //displayKeywordFreqs();
-    displayKeywords();
+    displayKeywords();*/
 }
 
 function add(index, num) {

@@ -45,66 +45,53 @@
 <body>
 
     <div id="content-header">
-        <input type="button" id="hide" value="" onclick="hideAll()" />
-        <input type="button" id="show" value="" onclick="openAll()" />
-        <input type="button" id="refresh" value="" onclick="refreshData()" />
-        <label style="color:black"><input type="checkbox" id="checkbox" onchange="refreshAll()"/> Auto refresh?</label>
-    </div>
-
-    <div id="content-main">
 
         <div id="percentage-testing">
-
-            <div id="percent_title_bar">
-                <input type="button" id="percent_minimize" value="Percentage Completion" onclick="minimizeP();">
-            </div>
-
-          
-
                         <div id="percent-box">
-
                             <div class="container-fluid" style="padding-left: 0px !important; padding-right: 0px !important;">
-
                                 <div class="progress">
-
                                     <div id="progress" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
                                          aria-valuemin="0" aria-valuemax="100" style="width:0%;">
-
-
-
-
                                     </div>
-
+                            <input type="button" id="refresh" value="" onclick="refreshData()" />
                                 </div>
                                 </div>
 
-
-                                <div id="percent-contentA">
-
-                                    <p style="font-size:55px" id="percentage"> 0%  </p>
+                    <div class="percent-content">
+                        <table>
+                            <td id="pc-left">
+                                <p style="font-size:55px" id="percentage"> 0% </p>
+                            </td>
+                            <td id="pc-right">
                                     <input type="button" id="percent-calculate" value="Calculate" onclick="getNumberOfWords();">
-
-
-                                </div>
-
-                                <div id="percent-contentB">
-                                    <p> of </p>
                                     <input type="text" id="word-aim" placeholder="Words Needed" />
-                                    <p> complete </p>
+                            </td>
+                        </table>
                                 </div>
-
                             </div>
-
                     </div>
+            <!--<label style="color:black"><input type="checkbox" id="checkbox" onchange="refreshAll()" /> Auto refresh?</label>-->
+        </div>
 
-                    <div id="formatting">
-
-                        <div id="format_title_bar">
-
-                <input type="button" id="format_minimize" value="Insert Essay Plan" onclick="minimizeF();">
-
+        <div class="tabs">
+            <div id="content-footer">
+                <ul class="tab-links">
+                    <li class="active"><a href="#tab1">Essay Plan</a></li>
+                    <li>
+                        <a href="#tab2">Common Words</a>
+                    </li>
+                    <li>
+                        <a href="#tab3">Key Words</a>
+                    </li>
+                    <li>
+                        <a href="#tab4">Settings</a>
+                    </li>
+                </ul>
                         </div>
 
+            <div class="tab-content">
+                <div id="content-main">
+                    <div id="tab1" class="tab active" >
                         <div id="format-box">
                             <form name="format">
                                 <table border="0" cellspacing="0" cellpadding="0">
@@ -126,27 +113,15 @@
                                     </tr>
                                 </table>
                 </form>
-
-                        </div>
-
                     </div>
-
-                    <div id="Common Words">
-
-                        <div id="common_title_bar">
-                            <input type="button" id="common_minimize" value="List Common Words" onclick="minimizeC();">
                         </div>
-
+                    <div id="tab2" class="tab" onclick="getMostCommonWords">
                         <div id="common-box">
                             <div id="common-button-div">
-
                                 <input type="button" id="common-button" value="Find Common Words" onclick="getMostCommonWords();" />
                             </div>
-
-
                             <div id="common-table-div">
                                 <table id="common-table">
-
                                     <tr>
                                         <th>Word</th>
                                         <th>Times Used</th>
@@ -168,54 +143,44 @@
                                         <td><p id="count3"></p></td>
                                     </tr>
                                 </table>
-
                                 <br />
                             <p id="explanation"></p>
-
-
                             </div>
                         </div>
-
         </div>
 
+                    <div id="tab3" class="tab" onclick="calculateKeywords()">
                     <div id="Key Words">
-
-                        <div id="key_title_bar">
-                            <input type="button" id="key_minimize" value="Key Words Tool" onclick="minimizeK();">
-                        </div>
-
                         <div id="key-box">
-
                             <form>
-
                                 <input type="text" id="keywords" placeholder="enter keywords here" />
-                                <input type="button" id="add_key" value="Add Keywords" onclick="addKeywords();" />
-                                <p id="keyword"></p>
-                            </form>
-
-                             <form>
-                                  <input type="button" id="check_key" value="Check for keywords" onclick="calcKeywords();" />
+                                <!--<input type="button" id="add_key" value="Add Keywords" onclick="addKeywords();" />  !-->
+                    <p id="keyword"></p>
+                </form>
+                <form>
+                                  <input type="button" id="check_key" value="Check for keywords" onclick="addKeywords();" />
           
-                                  <input type="button" id="clr_key" value="Clear keywords" onclick="clearKeywords();" />
+                    <input type="button" id="clr_key" value="Clear keywords" onclick="clearKeywords();" />
                             </form>
-
                             <hr />
-                           
-
-                            <div id="key-table-div">
-                                <table id="key-table">
-                                <tr>
-                                <th>Keyword</th>
-                                <th>Times Used</th>
-                                </tr>
-
-                                </table>
+                <div id="key-table-div">
+                    <table id="key-table">
+                        <tr>
+                            <th>Keyword</th>
+                            <th>Times Used</th>
+                        </tr>
+                    </table>
+                </div>
                             </div>
+                        </div>
+                    </div>
 
-                       </div>
-
-                  </div>
-
-     </div>
+                    <div id="tab4" class="tab">
+                        <p>Settings</p>
+                        <p></p>
+                    </div>
+                    </div>
+        </div>
+                </div>
 </body>
 </html>

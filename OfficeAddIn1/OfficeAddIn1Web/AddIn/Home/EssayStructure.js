@@ -11,8 +11,10 @@
             return context.sync().then(function () {
                 for (var i = 0; i < paragraphs.items.length; i++) {                
                     var paragraph = paragraphs.items[i];
-                    paragraph.insertBreak('page', 'After');
-                   // paragraph.style = "Heading 1";
+                    paragraph.insertBreak('line', 'After');
+                    paragraph.insertBreak('line', 'After');
+                    paragraph.insertBreak('line', 'After');
+                    paragraph.style = "Heading 1";
                     //paragraph.style = "Заголовок 1";
                     paragraph.font.color = 'black';
                     //paragraph.style = "Normal";
