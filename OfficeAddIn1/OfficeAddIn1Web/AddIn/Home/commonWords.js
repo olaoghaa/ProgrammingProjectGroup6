@@ -20,7 +20,7 @@ function getMostCommonWords() {
             var max = essayWords.length;
             var wordCounts = {};
             for (var i = 0; i < max; i++) {
-                if (!(essayWords[i] in filter)) {
+                if (filter.indexOf(essayWords[i]) < 0) {
                     if (essayWords[i] in wordCounts) {
                         wordCounts[essayWords[i]]++;
                     } else {

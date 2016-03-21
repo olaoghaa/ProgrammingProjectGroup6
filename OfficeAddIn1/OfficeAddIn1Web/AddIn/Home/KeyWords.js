@@ -72,9 +72,9 @@ function calculateKeywords() {
         console.log('keywords length = ' + keywords.length);
         console.log('numKeywords length = ' + numKeywords.length);
 
-       // var i = 0;
+        // var i = 0;
         for (var i = 0; i < keywords.length; i++) {
-        //while(1){
+            //while(1){
             console.log('loop ' + i);
 
             var searchResults = context.document.body.search(keywords[i], { ignorePunct: true });
@@ -94,7 +94,7 @@ function calculateKeywords() {
             //i++;
         }
 
-    })
+    });
     console.log('finished counting');
     console.log(numKeywords[0]);
     //displayKeywordFreqs();
