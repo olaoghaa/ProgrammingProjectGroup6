@@ -8,7 +8,7 @@
     Office.initialize = function (reason) {
         $(document).ready(function () {
             //$('#percent-calculate').click(getNumberOfWords);
-           
+            seeIfDisable();
         });
     };
 

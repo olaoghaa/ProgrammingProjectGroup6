@@ -1,4 +1,24 @@
-﻿function getStructureInput() {
+﻿
+function seeIfDisable() {
+    Word.run(function (ctx) {
+        var doc = ctx.document;
+        ctx.load(doc, 'body/text');
+        ctx.sync().then(function () {
+            var currentText = (doc.body.text || '').trim(),
+                wordCount = currentText.split(/[\s,]+/).length;
+            if (wordCount > 8) {
+                document.getElementById("format-button").disabled = true;
+            } else {
+                document.getElementById("format-button").disabled = false;
+            }
+            setTimeout(seeIfDisable, 500);
+        });
+    });
+}
+
+
+
+function getStructureInput() {
     var value = document.getElementById('Structure').value;
     Office.context.document.setSelectedDataAsync(value); 
     Word.run(function (context) {       
