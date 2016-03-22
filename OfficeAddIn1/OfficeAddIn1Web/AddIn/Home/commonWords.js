@@ -7,58 +7,60 @@ function wordSize(name, value) {
 }
 
 function getMostCommonWords() {
-    Office.context.document.getSelectedDataAsync(Office.CoercionType.Text,
-        function (result) {
+    Word.run(function (context) {
+        var doc = context.document;
+        context.load(doc, 'body/text');
             var list = document.getElementById('words');
             var filter1 = list.innerHTML;
             var filter = filter1.split(",");
             var listMax = filter.length;
             var separators = [' ', '-', '\\\(', '\\\)', '\\\. ', '/', "\n", '\\\?', '\r', ','];
+            context.sync().then(function () {
+                var essayWords = doc.body.text.toLowerCase().split(new RegExp(separators.join('|'), 'g'));
 
-            var essayWords = result.value.toLowerCase().split(new RegExp(separators.join('|'), 'g'));
-            
-            var max = essayWords.length;
-            var wordCounts = {};
-            for (var i = 0; i < max; i++) {
-                if (filter.indexOf(essayWords[i]) < 0) {
-                    if (essayWords[i] in wordCounts) {
-                        wordCounts[essayWords[i]]++;
-                    } else {
-                        wordCounts[essayWords[i]] = 1;
-                    }
-                }
-            }
-
-            if ("" in wordCounts) {
-                delete wordCounts[""];
-            }
-
-            var usedWords = [];
-            var mostCommonWords = {};
-            var currentWords;
-            var currentCount;
-
-            for (var i = 0; i < 4; i++) {
-                currentCount = 0;
-                currentWords = [];
-
-                for (var key in wordCounts) {
-                    if (wordCounts.hasOwnProperty(key)) {
-                        if (usedWords.indexOf(key) == -1) {
-                            if (wordCounts[key] > currentCount) {
-                                currentWords = [];
-                                currentWords.push(key);
-                                currentCount = wordCounts[key];
-                            } else if (wordCounts[key] == currentCount) {
-                                currentWords.push(key);
-                            }
+                var max = essayWords.length;
+                var wordCounts = {};
+                for (var i = 0; i < max; i++) {
+                    if (filter.indexOf(essayWords[i]) < 0) {
+                        if (essayWords[i] in wordCounts) {
+                            wordCounts[essayWords[i]]++;
+                        } else {
+                            wordCounts[essayWords[i]] = 1;
                         }
                     }
                 }
-                mostCommonWords[currentCount] = currentWords;
-                usedWords = usedWords.concat(currentWords);
-            }
-            displayCommonWords(mostCommonWords);
+
+                if ("" in wordCounts) {
+                    delete wordCounts[""];
+                }
+
+                var usedWords = [];
+                var mostCommonWords = {};
+                var currentWords;
+                var currentCount;
+
+                for (var i = 0; i < 4; i++) {
+                    currentCount = 0;
+                    currentWords = [];
+
+                    for (var key in wordCounts) {
+                        if (wordCounts.hasOwnProperty(key)) {
+                            if (usedWords.indexOf(key) == -1) {
+                                if (wordCounts[key] > currentCount) {
+                                    currentWords = [];
+                                    currentWords.push(key);
+                                    currentCount = wordCounts[key];
+                                } else if (wordCounts[key] == currentCount) {
+                                    currentWords.push(key);
+                                }
+                            }
+                        }
+                    }
+                    mostCommonWords[currentCount] = currentWords;
+                    usedWords = usedWords.concat(currentWords);
+                }
+                displayCommonWords(mostCommonWords);
+            });
         }
     );
 
