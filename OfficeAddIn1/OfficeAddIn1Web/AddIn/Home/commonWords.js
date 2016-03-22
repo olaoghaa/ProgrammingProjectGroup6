@@ -100,19 +100,55 @@ function selectionSort(arr) {
     }
     return arr;
 }
-
-
+function biggestf(mostCommonWords){
+    for (var key in mostCommonWords) {
+        if (mostCommonWords[key] != 0) {
+            biggest = key;
+        }
+    }
+    return biggest;
+}
+function displayHack(mostCommonWords, done) {
+    var biggest;
+    var biggest1;
+    biggest=biggestf(mostCommonWords)
+    for (var e = 0; e<4; e++) {
+        if (mostCommonWords[biggest][e]!=null&&done+e<4) {
+                document.getElementById("common" + (done+e).toString()).innerHTML = mostCommonWords[biggest][e];
+                document.getElementById("count" + (done+e).toString()).innerHTML = biggest;
+            }
+            if (mostCommonWords[biggest].length - 4 > 0) {
+                document.getElementById("explanation").innerHTML = (mostCommonWords[biggest].length - 4) + " more words are used " + biggest + " times";
+            }
+    }
+    return mostCommonWords[biggest].length;
+    
+}
 function displayCommonWords(mostCommonWords) {
     var displayCount = 0;
     var numWordsLeft;
     var wordsLeftCount;
-    for (var key in mostCommonWords) {
+    var biggest1;
+    var count = displayHack(mostCommonWords, 0);
+    var biggest = biggestf(mostCommonWords);
+    while (count < 4) {
+        delete mostCommonWords[biggest];
+        biggest = biggestf(mostCommonWords);
+        count += displayHack(mostCommonWords, count);
+
+    }
+
+    /*for (var key in mostCommonWords) {
+        //console.log(mostCommonWords.size);
         if (mostCommonWords.hasOwnProperty(key)) {
             if (displayCount < 4) {
                 for (var j = 0; j < mostCommonWords[key].length; j++) {
                     if (displayCount < 4) {
                         document.getElementById("common" + (3-displayCount).toString()).innerHTML = mostCommonWords[key][j];
-                        document.getElementById("count" + (3 - displayCount).toString()).innerHTML = key;
+                        document.getElementById("count" + (3- displayCount).toString()).innerHTML = key;
+                      /*  if (displayCount == 3&&wordsLeftCount>1) {
+                            document.getElementById("explanation").innerHTML = numWordsLeft + " more words are used " + wordsLeftCount + " times";
+                        }
                     } else {
                         numWordsLeft = mostCommonWords[key].length - j;
                         wordsLeftCount = key;
@@ -121,8 +157,8 @@ function displayCommonWords(mostCommonWords) {
                 }
             }
         }
-    }
-    document.getElementById("explanation").innerHTML = numWordsLeft + " more words are used " + wordsLeftCount + " times";
+    }*/
+    //document.getElementById("explanation").innerHTML = numWordsLeft + " more words are used " + wordsLeftCount + " times";
 }
         
 //            //spin16.stop();
