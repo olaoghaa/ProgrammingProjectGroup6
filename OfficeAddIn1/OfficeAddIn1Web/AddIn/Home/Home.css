@@ -94,7 +94,7 @@
 
 
 #format-box{
-    height: 180px;
+    height: 400px;
     width: 100%;
     background: #ffffff;   
     padding-top: 55px;
@@ -125,7 +125,7 @@
 
 #common-box{
     text-align:center;
-    height: 250px;
+    height: 400px;
     width: 100%;
     background: #ffffff;
     padding-left: 75px;
@@ -180,7 +180,7 @@ table{
 }
 
 #key-box{
-    height: 250px;
+    height: 400px;
     width: 100%;
     background: #ffffff;
     padding-left: 15px;
