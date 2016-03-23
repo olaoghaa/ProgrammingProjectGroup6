@@ -91,6 +91,12 @@
     border: 1px;
     text-align:center;
 }
+#format_title_bar{
+  
+    height: 35px;
+    width: 100%;
+}
+
 #format-box{
     height: 540px;
     width: 100%;
@@ -120,6 +126,12 @@
     border: 1px;
     text-align:center;
 }
+#common_title_bar{
+     text-align:center;
+    height: 35px;
+    width: 100%;
+}
+
 #common-box{
     text-align:center;
     height: 540px;
@@ -176,6 +188,11 @@ table{
     text-align:center;
 }
 
+#key_title_bar{
+  
+    height: 35px;
+    width: 100%;
+}
 #key-box{
     height: 540px;
     width: 100%;
