@@ -78,26 +78,26 @@ function calculateKeywords(i) {
         console.log('keywords length = ' + keywords.length);
         console.log('numKeywords length = ' + numKeywords.length);
 
-            console.log('loop ' + i);
+        console.log('loop ' + i);
 
-            var searchResults = context.document.body.search(keywords[i], { ignorePunct: true });
-            context.load(searchResults);
-            return context.sync().then(function () {
-                var len = searchResults.items.length;
-                console.log('Found count: ' + len);
-                if (searchResults != null) {
-                    add(i, len);
-                    numKeywords[i] = len;
-                    console.log(numKeywords[i]);
-                }
+        var searchResults = context.document.body.search(keywords[i], { ignorePunct: true });
+        context.load(searchResults);
+        return context.sync().then(function () {
+            var len = searchResults.items.length;
+            console.log('Found count: ' + len);
+            if (searchResults != null) {
+                add(i, len);
+                numKeywords[i] = len;
+                console.log(numKeywords[i]);
+            }
 
-            });
+        });
 
     });
-/*    console.log('finished counting');
-    console.log(numKeywords[0]);
-    //displayKeywordFreqs();
-    displayKeywords();*/
+    /*    console.log('finished counting');
+        console.log(numKeywords[0]);
+        //displayKeywordFreqs();
+        displayKeywords();*/
 }
 
 function add(index, num) {
