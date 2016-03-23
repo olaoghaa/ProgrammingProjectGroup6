@@ -91,6 +91,7 @@
     border: 1px;
     text-align:center;
 }
+
 #format_title_bar{
   
     height: 35px;
@@ -98,7 +99,7 @@
 }
 
 #format-box{
-    height: 540px;
+    height: 180px;
     width: 100%;
     background: #ffffff;   
     padding-top: 55px;
@@ -126,6 +127,7 @@
     border: 1px;
     text-align:center;
 }
+
 #common_title_bar{
      text-align:center;
     height: 35px;
@@ -134,7 +136,7 @@
 
 #common-box{
     text-align:center;
-    height: 540px;
+    height: 250px;
     width: 100%;
     background: #ffffff;
     padding-left: 75px;
@@ -193,14 +195,16 @@ table{
     height: 35px;
     width: 100%;
 }
+
 #key-box{
-    height: 540px;
+    height: 250px;
     width: 100%;
     background: #ffffff;
     padding-left: 15px;
     padding-right: 15px;
 
 }
+
 
 #keywords{
     padding-left: 10px;
