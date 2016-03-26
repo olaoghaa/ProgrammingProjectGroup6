@@ -28,6 +28,23 @@
     height: 100%; 
 }
 
+:disabled {
+     opacity: 0.65; 
+     cursor: none;
+}
+
+
+:hover:disabled::before{
+    content: 'text';
+    position: relative;
+    top: 60px;
+    left: 50px;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
 #percent_title_bar{   
     height: 10px;
     width: 100%;      
@@ -90,7 +107,16 @@
     width: 100%;
     border: 1px;
     text-align:center;
+    
 }
+
+#tab4{
+    padding-left:10px;
+    font-style: normal;
+    font-family:'Segoe UI';
+}
+
+
 
 
 #format-box{
@@ -113,6 +139,7 @@
     color:ghostwhite;
     cursor:pointer;   
 }
+
 
 
 /* common words tool style */
@@ -307,3 +334,4 @@ li.active a, li.active a:hover {
 .progress {
     margin-bottom: 0px !important;
 }
+

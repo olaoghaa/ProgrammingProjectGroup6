@@ -1,4 +1,17 @@
 ﻿
+var percentageInterval;
+
+function setRefreshP() {
+
+    console.log("YUPPEE");
+
+    if (document.getElementById("checkbox").checked) {
+        percentageInterval = setInterval(getNumberOfWords, 1000);
+    } else {
+        clearInterval(percentageInterval);
+    }
+}
+
 
 function getNumberOfWords() {
 
