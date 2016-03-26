@@ -84,7 +84,7 @@
                     <a href="#tab3">Key Words</a>
                 </li>
                 <li>
-                    <a href="#tab4">Settings</a>
+                    <a href="#tab4">Settings/Help</a>
                 </li>
             </ul>
         </div>
@@ -107,7 +107,8 @@
                                     <td>
                                         <p>
                                             <!-- This table shit is just for better formatting of the app, ignore it-->
-                                            <input type="button" id="format-button" value="Input Structure" onclick="getStructureInput();" />
+                                            
+                                            <input type="button" title="" disabled id="format-button" value="Input Essay Plan"  onclick="getStructureInput();" />                                            
                                         </p>
                                     </td>
                                 </tr>
@@ -176,7 +177,8 @@
                 </div>
 
                 <div id="tab4" class="tab">
-                    <p>Settings</p>
+                    <p style="font-size:20px;">Settings</p>
+                    <label style="font-weight:normal;" ><input type="checkbox" id="checkbox" onchange="refreshAll()" /> Auto refresh?</label>
                     <p></p>
                 </div>
             </div>
